@@ -1,0 +1,71 @@
+{
+  "stage": "discovery",
+  "questions": [
+    {
+      "id": "story-engine",
+      "question": "What makes the glass forest a place worth exploring?",
+      "choices": [
+        "It preserves people and buildings from a vanished kingdom.",
+        "It is advancing toward the sanctuary each night.",
+        "Its branches repeat sounds from possible futures."
+      ],
+      "recommended_answer": "It is advancing toward the sanctuary each night.",
+      "answer_paths": [
+        "/inspiration/premise",
+        "/inspiration/motifs"
+      ],
+      "blocking": false
+    },
+    {
+      "id": "focal-landmark",
+      "question": "What gives the sanctuary its unmistakable silhouette?",
+      "choices": [
+        "A city built around a broken astronomical ring.",
+        "A monastery suspended between two stone needles.",
+        "A fortress terraced inside an enormous petrified tree."
+      ],
+      "recommended_answer": "A city built around a broken astronomical ring.",
+      "answer_paths": [
+        "/entities/sanctuary/appearance",
+        "/style/focal_entity_id"
+      ],
+      "blocking": false
+    },
+    {
+      "id": "travel-choice",
+      "question": "What decision should the geography make interesting?",
+      "choices": [
+        "A safe bridge versus a dangerous mountain pass.",
+        "A short route through glass versus a long river detour.",
+        "Three rival roads controlled by different settlements."
+      ],
+      "recommended_answer": "A short route through glass versus a long river detour.",
+      "answer_paths": [
+        "/connections",
+        "/gameplay/affordances"
+      ],
+      "blocking": false
+    }
+  ],
+  "concept_options": [],
+  "assumptions": [
+    {
+      "path": "/style/perspective",
+      "value": "illustrated_oblique",
+      "reason": "The user requested a regional reference with pictorial terrain, not a tactical floor plan.",
+      "status": "proposed"
+    }
+  ],
+  "map_spec": null,
+  "changes": [],
+  "compiled": null,
+  "validation": {
+    "schema": "not_run",
+    "structured_rules": "not_run",
+    "image_review": "not_run",
+    "errors": [],
+    "warnings": [
+      "This is an example discovery response, not a completed canonical map spec."
+    ]
+  }
+}

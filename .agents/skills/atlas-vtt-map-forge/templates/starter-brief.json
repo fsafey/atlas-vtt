@@ -1,0 +1,32 @@
+{
+  "request": "Design a map for Atlas VTT in desktop Obsidian. Return an editable specification, player-safe image brief and Atlas scene setup plan. Do not generate an image.",
+  "mode": "discover",
+  "map_type": "regional",
+  "inspiration": {
+    "premise": "A mountain sanctuary overlooking a valley where the forest has begun turning into glass.",
+    "mood": [
+      "awe",
+      "mystery",
+      "beauty before danger"
+    ],
+    "visual_reference": "Fine ink and watercolor, pictorial terrain within overhead geography, one dominant landmark.",
+    "must_have": [
+      "a fortified sanctuary",
+      "a river with a strategic bridge",
+      "a glass forest with a distinctive edge"
+    ],
+    "must_avoid": [
+      "generic scattered fantasy icons",
+      "a cinematic horizon",
+      "baked-in UI markers"
+    ]
+  },
+  "preferences": {
+    "aspect_ratio": "16:9",
+    "labels": "Atlas text tools or external overlay; GM note links as separate pins",
+    "grid": "Atlas hex overlay; propose orientation and scale",
+    "invention_level": "balanced"
+  },
+  "question_budget": 5,
+  "instruction": "Use known answers, resolve only material map choices, then return a complete specification and compiled image instructions with atlas_setup. Keep the master private and use player-safe output for shared backgrounds."
+}

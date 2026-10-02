@@ -1,0 +1,6 @@
+interface:
+  display_name: "Atlas VTT Map Forge"
+  short_description: "Editable map briefs and Atlas VTT scene setup plans"
+  default_prompt: "Use $atlas-vtt-map-forge to design a map for Atlas VTT in Obsidian, return an editable specification and player-safe image brief, and include the Atlas grid and scene setup plan."
+policy:
+  allow_implicit_invocation: true

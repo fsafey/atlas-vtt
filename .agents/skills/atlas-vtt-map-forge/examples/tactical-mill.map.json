@@ -1,0 +1,555 @@
+{
+  "version": "1.0",
+  "id": "broken-tide-mill",
+  "revision": 1,
+  "title": "The Broken Tide Mill",
+  "map_type": "battlemap",
+  "purpose": "A 32 by 24 cell encounter map with two river crossings, a ruined mill and readable approach choices.",
+  "inspiration": {
+    "premise": "An abandoned tide mill controls a narrow watercourse; the bridge is exposed, while a shallow ford offers an alternate approach.",
+    "mood": [
+      "quiet danger",
+      "ancient utility",
+      "clear tactical choices"
+    ],
+    "novelty": "grounded",
+    "motifs": [
+      "weathered limestone",
+      "oxidized bronze",
+      "clear teal water"
+    ],
+    "references": []
+  },
+  "canvas": {
+    "aspect_ratio": [
+      4,
+      3
+    ],
+    "target_pixels": [
+      3200,
+      2400
+    ],
+    "margin_fraction": 0.025
+  },
+  "style": {
+    "preset": "painterly_tactical",
+    "perspective": "orthographic_top_down",
+    "medium": "Hand-painted fantasy encounter map with precise floor plans and restrained material texture.",
+    "linework": "Clean dark boundaries for walls and water edges, softer marks for grass and worn earth.",
+    "palette": {
+      "water": "#4F7E80",
+      "stone": "#B7AD94",
+      "grass": "#7F8B60",
+      "bronze": "#927443",
+      "shadow": "#51584E"
+    },
+    "surface_texture": "Specific local wear and material grain; no uniform noise over all walkable spaces.",
+    "lighting": "Even readable daylight, short soft shadows, no bloom or fog over movement paths.",
+    "density": "balanced",
+    "focal_entity_id": "mill",
+    "hierarchy": [
+      "mill",
+      "bridge",
+      "ford",
+      "east_terrace"
+    ],
+    "border_treatment": "none"
+  },
+  "environment": {
+    "terrain_summary": "A north-south watercourse divides grassy banks. The mill sits on the east bank. A stone bridge near the center and a shallow ford to the south both connect the west approach to the eastern terrace.",
+    "season": "late summer",
+    "time_of_day": "afternoon",
+    "weather": "dry and clear",
+    "physical_logic": "naturalistic",
+    "exceptions": []
+  },
+  "entities": {
+    "mill": {
+      "name": "The Tide Mill",
+      "kind": "room",
+      "visibility": "public",
+      "importance": "primary",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.57,
+          0.18,
+          0.23,
+          0.3
+        ]
+      },
+      "appearance": "A roofless rectangular stone mill interior with broken walls, pale flagstones, one large grindstone and a dry work area. View every wall and floor vertically from above.",
+      "must_show": [
+        "roof removed",
+        "one circular grindstone",
+        "one obvious south doorway",
+        "walls do not cover interior floor"
+      ],
+      "must_avoid": [
+        "an isometric facade",
+        "a second floor drawn over the playable floor"
+      ],
+      "gameplay_role": "Encounter objective with an enterable interior",
+      "gm_notes": ""
+    },
+    "waterwheels": {
+      "name": "Twin Waterwheels",
+      "kind": "prop",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 2,
+      "placement": {
+        "bounds": [
+          0.49,
+          0.22,
+          0.085,
+          0.23
+        ]
+      },
+      "appearance": "Two large weathered wooden waterwheels attached to the mill west wall, readable from directly above with their axles pointing toward the mill.",
+      "must_show": [
+        "exactly two separate wheels",
+        "attachment to the mill wall"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Distinctive industrial landmark and edge hazard",
+      "gm_notes": ""
+    },
+    "channel": {
+      "name": "The Millrace",
+      "kind": "river",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.39,
+          0.025,
+          0.11,
+          0.95
+        ],
+        "path": [
+          [
+            0.445,
+            0.03
+          ],
+          [
+            0.445,
+            0.2
+          ],
+          [
+            0.44,
+            0.4
+          ],
+          [
+            0.45,
+            0.6
+          ],
+          [
+            0.445,
+            0.81
+          ],
+          [
+            0.46,
+            0.97
+          ]
+        ]
+      },
+      "appearance": "A continuous clear teal channel flowing from the north edge to the south edge, darker in the deeper center and shallow at the southern ford.",
+      "must_show": [
+        "continuous water",
+        "visible shallows at the ford"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Separates the two banks",
+      "gm_notes": ""
+    },
+    "west_entry": {
+      "name": "West Approach",
+      "kind": "terrain",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.12,
+          0.75,
+          0.17,
+          0.17
+        ]
+      },
+      "appearance": "A broad patch of dry packed earth with sparse grass and enough unoccupied floor for an arriving group.",
+      "must_show": [
+        "clear open ground"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Entry and staging area",
+      "gm_notes": ""
+    },
+    "bridge": {
+      "name": "The Stone Span",
+      "kind": "bridge",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.34,
+          0.57,
+          0.28,
+          0.1
+        ]
+      },
+      "appearance": "A short east-west stone bridge crossing the channel; its clear travel surface connects both banks. Low broken parapets provide partial cover without sealing the path.",
+      "must_show": [
+        "at least two cells of clear width",
+        "both ends meet dry ground"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Fast exposed crossing",
+      "gm_notes": ""
+    },
+    "ford": {
+      "name": "The Shallow Ford",
+      "kind": "terrain",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.355,
+          0.775,
+          0.225,
+          0.14
+        ]
+      },
+      "appearance": "A shallow crossing of pale submerged stones with a readable line of travel across the channel, no deep-water gap.",
+      "must_show": [
+        "at least three cells of passable width",
+        "visible shallows rather than a second bridge"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Slower alternate crossing",
+      "gm_notes": ""
+    },
+    "east_terrace": {
+      "name": "The Work Terrace",
+      "kind": "terrain",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.6,
+          0.56,
+          0.26,
+          0.23
+        ]
+      },
+      "appearance": "An open paved work terrace on the east bank; broken edge stones frame the space but leave the central travel lane clear.",
+      "must_show": [
+        "a broad central movement lane"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Maneuvering and staging space before entering the mill",
+      "gm_notes": ""
+    },
+    "mill_entry": {
+      "name": "South Mill Doorway",
+      "kind": "doorway",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.635,
+          0.435,
+          0.085,
+          0.065
+        ]
+      },
+      "appearance": "A two-cell-wide opening in the south wall of the mill, without a door leaf or debris across the threshold.",
+      "must_show": [
+        "an actual opening in the wall"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Access from the terrace to the mill interior",
+      "gm_notes": ""
+    },
+    "cover_blocks": {
+      "name": "Fallen Stone Blocks",
+      "kind": "prop",
+      "visibility": "public",
+      "importance": "ambient",
+      "quantity": 3,
+      "placement": {
+        "bounds": [
+          0.77,
+          0.58,
+          0.085,
+          0.17
+        ]
+      },
+      "appearance": "Three separate fallen sandstone blocks grouped along the eastern terrace edge, with gaps between them and no obstruction to the central approach.",
+      "must_show": [
+        "exactly three blocks"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Optional cover outside the central movement lane",
+      "gm_notes": ""
+    },
+    "hidden_cache": {
+      "name": "Hidden Axle Cache",
+      "kind": "prop",
+      "visibility": "gm_only",
+      "importance": "ambient",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.61,
+          0.24,
+          0.045,
+          0.045
+        ]
+      },
+      "appearance": "A concealed compartment beneath the workbench.",
+      "must_show": [],
+      "must_avoid": [],
+      "gameplay_role": "",
+      "gm_notes": "A sealed note and a silver key are here. Neither the compartment outline nor its label belongs on the player map."
+    }
+  },
+  "connections": {
+    "bridge_approach": {
+      "from": "west_entry",
+      "to": "east_terrace",
+      "via": [
+        "bridge"
+      ],
+      "kind": "bridge_crossing",
+      "visibility": "public",
+      "traversable": true,
+      "path": [
+        [
+          0.2,
+          0.835
+        ],
+        [
+          0.27,
+          0.71
+        ],
+        [
+          0.37,
+          0.62
+        ],
+        [
+          0.48,
+          0.62
+        ],
+        [
+          0.63,
+          0.62
+        ],
+        [
+          0.7,
+          0.67
+        ]
+      ],
+      "width_cells": 2,
+      "appearance": "A continuous dry approach across the bridge, with the road surface visible between pieces of rubble."
+    },
+    "ford_approach": {
+      "from": "west_entry",
+      "to": "east_terrace",
+      "via": [
+        "ford"
+      ],
+      "kind": "trail",
+      "visibility": "public",
+      "traversable": true,
+      "path": [
+        [
+          0.2,
+          0.835
+        ],
+        [
+          0.34,
+          0.84
+        ],
+        [
+          0.46,
+          0.84
+        ],
+        [
+          0.61,
+          0.83
+        ],
+        [
+          0.7,
+          0.7
+        ]
+      ],
+      "width_cells": 3,
+      "appearance": "A continuous alternate approach through the shallow ford and back onto the eastern bank."
+    },
+    "terrace_to_door": {
+      "from": "east_terrace",
+      "to": "mill_entry",
+      "via": [],
+      "kind": "trail",
+      "visibility": "public",
+      "traversable": true,
+      "path": [
+        [
+          0.7,
+          0.67
+        ],
+        [
+          0.73,
+          0.54
+        ],
+        [
+          0.68,
+          0.467
+        ]
+      ],
+      "width_cells": 2,
+      "appearance": "An unobstructed stone approach to the south doorway."
+    },
+    "door_to_interior": {
+      "from": "mill_entry",
+      "to": "mill",
+      "via": [],
+      "kind": "corridor",
+      "visibility": "public",
+      "traversable": true,
+      "path": [
+        [
+          0.68,
+          0.467
+        ],
+        [
+          0.68,
+          0.4
+        ],
+        [
+          0.69,
+          0.33
+        ]
+      ],
+      "width_cells": 2,
+      "appearance": "An open threshold leading into the visible mill interior."
+    }
+  },
+  "relationships": [
+    {
+      "from": "mill",
+      "to": "channel",
+      "relation": "east_of",
+      "strength": "must",
+      "detail": "The mill is on the east bank, with only the waterwheels approaching the water."
+    },
+    {
+      "from": "bridge",
+      "to": "channel",
+      "relation": "crosses",
+      "strength": "must",
+      "detail": "The bridge deck crosses the actual water, not merely points toward it."
+    },
+    {
+      "from": "ford",
+      "to": "bridge",
+      "relation": "south_of",
+      "strength": "must",
+      "detail": "The ford is the distinctly separate southern route."
+    },
+    {
+      "from": "mill",
+      "to": "east_terrace",
+      "relation": "north_of",
+      "strength": "must",
+      "detail": "Keep the main approach from the south."
+    },
+    {
+      "from": "hidden_cache",
+      "to": "mill",
+      "relation": "inside",
+      "strength": "must",
+      "detail": "Private GM placement only."
+    }
+  ],
+  "gameplay": {
+    "grid": {
+      "type": "square",
+      "render": "vtt",
+      "columns": 32,
+      "rows": 24,
+      "pixels_per_cell": 100,
+      "hex_cell_width_px": null,
+      "hex_orientation": "none",
+      "offset_px": [
+        0,
+        0
+      ],
+      "units_per_cell": 5,
+      "units": "ft"
+    },
+    "entry_ids": [
+      "west_entry"
+    ],
+    "objective_ids": [
+      "mill"
+    ],
+    "require_reachability": true,
+    "minimum_path_width_cells": 2,
+    "affordances": [
+      "two different crossing choices",
+      "a two-cell-wide main approach",
+      "cover placed away from the central lane",
+      "an enterable roofless interior"
+    ],
+    "must_preserve": [
+      "the open south doorway",
+      "both crossings",
+      "actual navigable floor space",
+      "consistent overhead scale"
+    ]
+  },
+  "annotations": {
+    "label_mode": "none",
+    "labels": [],
+    "typography": "No lettering on the player battlemap.",
+    "markers": "vtt",
+    "clear_zones": []
+  },
+  "production": {
+    "audience": "player",
+    "variant": "base",
+    "action": "new_image",
+    "base_image_reference": null,
+    "edit_scope": [],
+    "output_format": "png",
+    "must_include": [
+      "two waterwheels",
+      "one stone bridge and one distinct shallow ford",
+      "a visible open south doorway"
+    ],
+    "must_avoid": [
+      "painted grids",
+      "labels",
+      "standing characters or tokens",
+      "cinematic camera tilt",
+      "deep perspective shadows",
+      "decorative rubble blocking routes"
+    ],
+    "revision_notes": "Original tactical demonstration. Requested dimensions are a delivery target, not proof of native image output size."
+  },
+  "locks": [
+    "/canvas",
+    "/style/perspective",
+    "/entities/mill/placement",
+    "/entities/channel/placement",
+    "/connections",
+    "/gameplay/grid"
+  ]
+}

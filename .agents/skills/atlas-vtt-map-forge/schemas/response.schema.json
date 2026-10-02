@@ -1,0 +1,548 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/atlas-vtt-map-forge/response.schema.json",
+  "title": "Atlas VTT Map Forge dialogue response",
+  "type": "object",
+  "properties": {
+    "stage": {
+      "enum": [
+        "discovery",
+        "draft",
+        "ready",
+        "blocked"
+      ]
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*$"
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "recommended_answer": {
+            "type": "string"
+          },
+          "answer_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "blocking": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "question",
+          "choices",
+          "recommended_answer",
+          "answer_paths",
+          "blocking"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "concept_options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "premise": {
+            "type": "string",
+            "minLength": 1
+          },
+          "signature_landmark": {
+            "type": "string",
+            "minLength": 1
+          },
+          "play_pattern": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visual_approach": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "premise",
+          "signature_landmark",
+          "play_pattern",
+          "visual_approach"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "value": {},
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "proposed",
+              "accepted"
+            ]
+          }
+        },
+        "required": [
+          "path",
+          "value",
+          "reason",
+          "status"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "map_spec": {
+      "anyOf": [
+        {
+          "$ref": "map-spec.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "before": {},
+          "after": {},
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "path",
+          "before",
+          "after",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "compiled": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "compiler_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_sha256": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "map_id": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_-]*$"
+            },
+            "revision": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "audience": {
+              "enum": [
+                "player",
+                "gm"
+              ]
+            },
+            "image_instructions": {
+              "type": "string",
+              "minLength": 1
+            },
+            "attachments_required": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "source": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "role": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "source",
+                  "role"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0
+            },
+            "postproduction": {
+              "type": "object"
+            },
+            "acceptance_checks": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 0
+            },
+            "warnings": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 0
+            },
+            "validation": {
+              "type": "object",
+              "properties": {
+                "schema": {
+                  "enum": [
+                    "not_run",
+                    "pass",
+                    "fail"
+                  ]
+                },
+                "structured_rules": {
+                  "enum": [
+                    "not_run",
+                    "pass",
+                    "fail"
+                  ]
+                },
+                "image_review": {
+                  "enum": [
+                    "not_run",
+                    "pass",
+                    "fail"
+                  ]
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 0
+                },
+                "warnings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 0
+                }
+              },
+              "required": [
+                "schema",
+                "structured_rules",
+                "image_review",
+                "errors",
+                "warnings"
+              ],
+              "additionalProperties": false
+            },
+            "image_status": {
+              "const": "not_generated"
+            },
+            "private_gm_notes": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "atlas_setup": {
+              "type": "object",
+              "properties": {
+                "platform": {
+                  "const": "atlas-vtt"
+                },
+                "status": {
+                  "const": "plan_only_not_imported"
+                },
+                "scene_export": {
+                  "const": "not_created"
+                },
+                "scene_extension": {
+                  "const": ".atlasmap"
+                },
+                "background_audience": {
+                  "enum": [
+                    "player",
+                    "gm"
+                  ]
+                },
+                "background_use": {
+                  "enum": [
+                    "player_safe_candidate",
+                    "gm_reference_only"
+                  ]
+                },
+                "coordinate_basis": {
+                  "const": "normalized_image_space_not_atlas_world_coordinates"
+                },
+                "target_pixels": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "grid_field_hints": {
+                  "type": "object",
+                  "properties": {
+                    "enabled": {
+                      "type": "boolean"
+                    },
+                    "visible": {
+                      "type": "boolean"
+                    },
+                    "snapToGrid": {
+                      "type": "boolean"
+                    },
+                    "type": {
+                      "enum": [
+                        "square",
+                        "hex-horizontal",
+                        "hex-vertical"
+                      ]
+                    },
+                    "size": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "offsetX": {
+                      "type": "number"
+                    },
+                    "offsetY": {
+                      "type": "number"
+                    },
+                    "unitType": {
+                      "enum": [
+                        "feet",
+                        "yards",
+                        "meters",
+                        "units"
+                      ]
+                    },
+                    "unitDistance": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "measurementType": {
+                      "enum": [
+                        "units",
+                        "abstract"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "enabled",
+                    "visible",
+                    "snapToGrid"
+                  ],
+                  "additionalProperties": false
+                },
+                "source_grid": {
+                  "$ref": "map-spec.schema.json#/$defs/grid"
+                },
+                "text_label_candidates": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                },
+                "gm_note_pin_candidates": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                },
+                "setup_steps": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1
+                },
+                "calibration_notes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1
+                },
+                "acceptance_checks": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "minItems": 1
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "platform",
+                "status",
+                "scene_export",
+                "scene_extension",
+                "background_audience",
+                "background_use",
+                "coordinate_basis",
+                "target_pixels",
+                "grid_field_hints",
+                "source_grid",
+                "text_label_candidates",
+                "gm_note_pin_candidates",
+                "setup_steps",
+                "calibration_notes",
+                "acceptance_checks"
+              ]
+            }
+          },
+          "required": [
+            "compiler_version",
+            "source_sha256",
+            "map_id",
+            "revision",
+            "audience",
+            "image_instructions",
+            "attachments_required",
+            "postproduction",
+            "acceptance_checks",
+            "warnings",
+            "validation",
+            "image_status",
+            "atlas_setup"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "enum": [
+            "not_run",
+            "pass",
+            "fail"
+          ]
+        },
+        "structured_rules": {
+          "enum": [
+            "not_run",
+            "pass",
+            "fail"
+          ]
+        },
+        "image_review": {
+          "enum": [
+            "not_run",
+            "pass",
+            "fail"
+          ]
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "schema",
+        "structured_rules",
+        "image_review",
+        "errors",
+        "warnings"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "stage",
+    "questions",
+    "concept_options",
+    "assumptions",
+    "map_spec",
+    "changes",
+    "compiled",
+    "validation"
+  ],
+  "additionalProperties": false
+}

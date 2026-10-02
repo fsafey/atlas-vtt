@@ -1,0 +1,281 @@
+{
+  "compiler_version": "1.1.0-atlas",
+  "source_sha256": "bece33c4bb592a42bd303977bed1c400a8d4b0f2ee588090791c6fec0373e6ea",
+  "map_id": "lantern-marches",
+  "revision": 1,
+  "audience": "player",
+  "image_instructions": "DELIVERABLE\nOne regional map for tabletop play, 16:9 composition. Overhead geographic composition with pictorial oblique mountains and buildings; no horizon or cinematic landscape camera.\nPurpose: Player-facing exploration atlas for choosing routes between a fortified city, wild country and uncanny landmarks. Not a token-scale battlemap.\nWorking title (not automatically printed): The Lantern Marches.\n\nINTENT AND COMPOSITION\nPremise: A river kingdom survives under an ancient astronomical citadel, while three glass monoliths awaken on its eastern frontier.\nMood: wonder, weathered grandeur, inviting mystery. Novelty: balanced.\nMotifs: bronze astronomical circles; pale limestone; amber reeds\nA broad south-draining valley between a wooded western slope and a steep eastern plateau. Northern mountains frame the citadel; the southern river mouth opens to the sea.\nPrimary visual anchor: Crown of Tides. Read in this order: Crown of Tides > The Three Listeners > The Lowwater > The Ember Reeds > Lantern Quay.\nKeep critical content inside an edge safety inset of 3.0%. North is up. Coordinates below use image space: x left-to-right, y top-to-bottom; every percentage is relative to the complete canvas. These are layout instructions, not drawn coordinate labels.\n\nVISUAL LANGUAGE\nFine ink-and-watercolor fantasy cartography with carefully drawn miniature architecture.\nLinework: Thin charcoal contours; finer hatching inside landforms; distinct silhouettes without heavy comic outlines.\nPalette by role: accent: #B77543; forest: #899779; paper: #E5E0D3; stone: #B5B5A8; water: #728B9A\nSurface: Subtle matte paper tooth, not distressed parchment stains. Low-contrast texture in open land and water.\nLighting: Soft overcast daylight with light coming from upper left; gentle relief shading, no cast shadows hiding paths.\nDetail density: dense. Border: none; edge-to-edge geographic artwork. Concentrate small detail around important places; protect terrain silhouettes and readable routes.\n\nENVIRONMENT\nSeason: early autumn. Time: late morning. Weather: clear air under thin cloud. Physical logic: mythic. Explicit exceptions: The three glass spires are supernatural constructions; their shapes need not follow natural geology. Rivers and travel routes otherwise follow plausible terrain.\n\nREQUIRED MAP CONTENT\ncitadel | Crown of Tides | fort | primary | quantity 1. box left 43.0%, top 16.0%, width 22.0%, height 20.0%. A compact limestone city on a low escarpment, encircled by terraced walls and crowned by a single enormous tilted bronze astronomical ring. The ring is the unique regional silhouette.\nMust show: one oversized bronze ring, not a skull; three stepped wall terraces; one clear south-facing approach.\nDo not show here: a second ring; a floating city; a skull-shaped tower.\nSpatial function: Main destination and navigational anchor.\n\nglass_spires | The Three Listeners | landmark | primary | quantity 3. box left 75.0%, top 30.0%, width 19.0%, height 34.0%. Exactly three tall, narrow smoky-glass monoliths rise from a flat basalt shelf. One is visibly tilted, one split at its top, and one intact. Space them so they remain individually countable.\nMust show: exactly three separate monoliths; three different silhouettes; a visible ascending trail from the west.\nDo not show here: extra miniature spires; floating rocks.\nSpatial function: Eastern exploration objective visible from far away.\n\ncopper_marsh | The Ember Reeds | terrain | supporting | quantity 1. box left 59.0%, top 70.0%, width 21.0%, height 17.0%. A low copper-and-rust reed marsh with dark pools and a few raised hummocks, providing the sole warm color mass in the lower-right region.\nMust show: water visible between reed masses.\nSpatial function: A hazardous optional detour, not a wall of vegetation.\n\nriver | The Lowwater | river | supporting | quantity 1. box left 32.0%, top 32.0%, width 25.0%, height 64.0%. A connected slate-blue river descending from below the citadel through the valley and into a small southern delta. Keep upstream narrower and downstream broader.\nShape path: (54.0% across, 34.0% down) -> (55.0% across, 41.0% down) -> (52.0% across, 48.0% down) -> (51.0% across, 55.0% down) -> (49.0% across, 64.0% down) -> (44.0% across, 74.0% down) -> (37.0% across, 85.0% down) -> (34.0% across, 95.0% down).\nMust show: one continuous connected watercourse; a visible southern outlet.\nDo not show here: water flowing uphill; random disconnected river fragments.\nSpatial function: Divides travel choices and establishes the valley direction.\n\nsouth_port | Lantern Quay | settlement | supporting | quantity 1. box left 25.0%, top 83.0%, width 15.0%, height 11.0%. A small fishing and caravan port on the western river mouth, with clustered low roofs, two short jetties and a warm beacon tower.\nMust show: two short jetties; one small beacon tower.\nSpatial function: Southern campaign entry point.\n\nstone_bridge | The Last Arch | bridge | supporting | quantity 1. box left 46.5%, top 52.5%, width 10.0%, height 6.0%. A single worn pale-stone arch spanning the narrow river, with visibly connected approaches on both banks.\nMust show: both bridge ends meet land; the river remains visible below the arch.\nSpatial function: A strategically legible chokepoint.\n\nwatchtower | The Leaning Watch | landmark | supporting | quantity 1. box left 18.0%, top 64.0%, width 5.5%, height 9.0%. One roofless square watchtower leaning slightly on a low grassy knoll. The missing upper corner makes it recognizable at small scale.\nMust show: one missing upper corner.\nSpatial function: Western exploration objective.\n\nnorthern_ridge | The Rimeback | mountain | ambient | quantity 1. box left 33.0%, top 3.5%, width 60.0%, height 12.0%. An irregular chain of pale angular peaks, taller to the northeast, lower at the central pass.\nMust show: a visible central pass.\nSpatial function: Northern geographic boundary.\n\nsouth_sea | The Somber Reach | water | ambient | quantity 1. box left 2.0%, top 93.5%, width 96.0%, height 6.5%. A calm strip of blue-gray coastal water at the lower edge; the Lowwater visibly empties here.\nSpatial function: Southern boundary and river outlet.\n\nwestern_wood | The Pale Boughs | forest | ambient | quantity 1. box left 6.0%, top 24.0%, width 27.0%, height 37.0%. A dense wedge of white-barked forest with a few leaning old trunks and small clearings, drawn as coherent wooded masses rather than evenly scattered tree icons.\nMust show: two or three broad clearings.\nSpatial function: A slower wilderness route on the west side of the valley.\n\nROUTES AND ACCESS\nmarsh_detour: trail; The Last Arch -> The Ember Reeds. Traversable. Route shape: (51.0% across, 55.0% down) -> (57.0% across, 62.0% down) -> (62.0% across, 68.0% down) -> (67.0% across, 77.0% down). A narrow raised path ending at the marsh edge; do not conceal its entrance.\npilgrim_road: road; Lantern Quay -> The Last Arch -> Crown of Tides. Traversable. Route shape: (32.5% across, 88.5% down) -> (36.0% across, 78.0% down) -> (43.0% across, 66.0% down) -> (51.0% across, 55.0% down) -> (58.0% across, 44.0% down) -> (54.0% across, 29.0% down). A pale packed-earth road, clearly differentiated from the blue river; it crosses only at the stone bridge.\nspire_ascent: trail; Crown of Tides -> The Three Listeners. Traversable. Route shape: (54.0% across, 29.0% down) -> (65.0% across, 34.0% down) -> (72.0% across, 43.0% down) -> (82.0% across, 46.0% down). A narrow switchback ascent with a believable ramp onto the basalt shelf.\nwestern_branch: trail; The Last Arch -> The Leaning Watch. Traversable. Route shape: (51.0% across, 55.0% down) -> (39.0% across, 60.0% down) -> (30.0% across, 63.0% down) -> (20.5% across, 68.5% down). A secondary dirt trail across open grass with occasional broken boundary stones.\n\nSPATIAL RELATIONSHIPS\nMUST: Crown of Tides north of The Last Arch. The city sits upstream above the river crossing.\nMUST: The Three Listeners east of The Lowwater. The spires occupy the eastern plateau, not the western forest.\nMUST: The Leaning Watch west of The Lowwater. Keep the watchtower on the same western side as the port approach.\nMUST: The Last Arch crosses The Lowwater. The arch crosses the actual river, not a neighboring dry channel.\nMUST: The Lowwater flows into The Somber Reach. The river outlet meets the coastal water without a strip of land blocking it.\n\nPLAYABILITY\nAffordances: a river chokepoint; a fast main road versus optional rough detours; a high eastern landmark visible from lower terrain\nPreserve: the public route graph; distinct silhouettes for city, spires and watchtower; an unbroken river outlet; broad quiet areas for reading terrain\nKeep the declared traversable routes visibly continuous between entry points and objectives; do not seal openings with props or decoration.\n\nGRID, TEXT AND UI\nDo not paint a square grid, hex grid, coordinate numbers or grid intersections. Grid setup is handled separately.\nDo not paint any titles, names, text, numbers or legends. Location names in these instructions identify objects only; lettering is a separate layer.\nDo not draw VTT pins, tokens, mouse pointers, toolbars or interface chrome. Keep these regions visually quiet for overlays, without drawing blank boxes: box left 43.0%, top 36.5%, width 22.0%, height 3.5%: low-detail ground for the citadel label\n\nREFERENCE DIRECTION\nReference regional-reference, role style: use fine hand-inked terrain; restrained watercolor washes; pictorial mountains and buildings within overhead geography; one dominant architectural landmark; varied regional silhouettes. Ignore original place names and exact geography; numbered hex overlay; mouse pointer; interface pins; cropped banner.\nUse references only for their assigned roles; create the specified new geography unless a layout reference explicitly requires otherwise.\n\nFINAL PRIORITIES\nRequired objects, their quantities, spatial relationships and readable routes take precedence over decorative density. Do not replace a difficult required feature with a generic substitute.\nMust include: a uniquely recognizable astronomical citadel; three countable glass spires; a readable network of public travel routes\nAvoid: borrowed place names from the reference; UI screenshots; cursor arrows; painted VTT markers; photorealistic satellite terrain; a cinematic horizon; unrequested text; standing character tokens",
+  "attachments_required": [],
+  "postproduction": {
+    "target_pixels": [
+      3840,
+      2160
+    ],
+    "output_format": "png",
+    "grid": {
+      "columns": null,
+      "hex_cell_width_px": 120,
+      "hex_orientation": "pointy_top",
+      "offset_px": [
+        0,
+        0
+      ],
+      "pixels_per_cell": null,
+      "render": "vtt",
+      "rows": null,
+      "type": "hex",
+      "units": "mi",
+      "units_per_cell": 6
+    },
+    "label_mode": "postprocess",
+    "labels": [
+      {
+        "anchor": [
+          0.54,
+          0.39
+        ],
+        "entity_id": "citadel",
+        "id": "citadel-name",
+        "rotation_deg": 0,
+        "text": "CROWN OF TIDES",
+        "visibility": "public"
+      },
+      {
+        "anchor": [
+          0.81,
+          0.67
+        ],
+        "entity_id": "glass_spires",
+        "id": "spires-name",
+        "rotation_deg": 0,
+        "text": "THE THREE LISTENERS",
+        "visibility": "public"
+      },
+      {
+        "anchor": [
+          0.17,
+          0.46
+        ],
+        "entity_id": "western_wood",
+        "id": "wood-name",
+        "rotation_deg": 0,
+        "text": "THE PALE BOUGHS",
+        "visibility": "public"
+      },
+      {
+        "anchor": [
+          0.27,
+          0.96
+        ],
+        "entity_id": "south_port",
+        "id": "port-name",
+        "rotation_deg": 0,
+        "text": "LANTERN QUAY",
+        "visibility": "public"
+      }
+    ],
+    "typography": "Small-cap serif geographic labels, dark charcoal, restrained tracking; add outside the image generator.",
+    "marker_destination": "vtt",
+    "marker_candidates": [
+      {
+        "entity_id": "citadel",
+        "name": "Crown of Tides",
+        "anchor": [
+          0.54,
+          0.26
+        ]
+      },
+      {
+        "entity_id": "copper_marsh",
+        "name": "The Ember Reeds",
+        "anchor": [
+          0.695,
+          0.7849999999999999
+        ]
+      },
+      {
+        "entity_id": "glass_spires",
+        "name": "The Three Listeners",
+        "anchor": [
+          0.845,
+          0.47
+        ]
+      },
+      {
+        "entity_id": "river",
+        "name": "The Lowwater",
+        "anchor": [
+          0.445,
+          0.64
+        ]
+      },
+      {
+        "entity_id": "south_port",
+        "name": "Lantern Quay",
+        "anchor": [
+          0.325,
+          0.885
+        ]
+      },
+      {
+        "entity_id": "stone_bridge",
+        "name": "The Last Arch",
+        "anchor": [
+          0.515,
+          0.555
+        ]
+      },
+      {
+        "entity_id": "watchtower",
+        "name": "The Leaning Watch",
+        "anchor": [
+          0.2075,
+          0.685
+        ]
+      }
+    ],
+    "status": "plan_only_not_exported",
+    "calibration_note": "Overlay positions are design targets; align to the actual generated art. No SVG layers, VTT walls, lighting, tokens or scene file have been created."
+  },
+  "acceptance_checks": [
+    "Confirm actual image dimensions, aspect ratio and export format; do not infer them from the requested settings.",
+    "Compare each required landmark, requested quantity and distinctive detail with the spec at full size.",
+    "Verify the main focal hierarchy at thumbnail size; check small detail does not overwhelm routes.",
+    "Inspect physical route continuity, bridges, river outlets, openings, stairs and occlusion; graph validity alone is insufficient.",
+    "Confirm no GM-only information, text or markers leaked into a player image.",
+    "Calibrate the actual raster to the VTT grid and test representative token movement before play.",
+    "After an edit, compare unchanged regions to the approved base; do not assume identical geometry.",
+    "Check Crown of Tides: quantity 1; one oversized bronze ring, not a skull; three stepped wall terraces; one clear south-facing approach",
+    "Check The Ember Reeds: quantity 1; water visible between reed masses",
+    "Check The Three Listeners: quantity 3; exactly three separate monoliths; three different silhouettes; a visible ascending trail from the west",
+    "Check The Lowwater: quantity 1; one continuous connected watercourse; a visible southern outlet",
+    "Check Lantern Quay: quantity 1; two short jetties; one small beacon tower",
+    "Check The Last Arch: quantity 1; both bridge ends meet land; the river remains visible below the arch",
+    "Check The Leaning Watch: quantity 1; one missing upper corner"
+  ],
+  "warnings": [
+    "Hex dimensions are a setup plan, not a square-grid pixel calculation. Calibrate the actual image in the VTT.",
+    "Coordinates, counts and route geometry are design constraints, not proven properties of any generated image.",
+    "Schema and structured-rule checks do not validate hydrology, crossings, visual occlusion, room topology or prose contradictions.",
+    "Target pixel dimensions and file format are export goals. Verify actual image metadata and calibrate the VTT after generation."
+  ],
+  "validation": {
+    "schema": "pass",
+    "structured_rules": "pass",
+    "image_review": "not_run",
+    "errors": [],
+    "warnings": [
+      "Hex dimensions are a setup plan, not a square-grid pixel calculation. Calibrate the actual image in the VTT.",
+      "Coordinates, counts and route geometry are design constraints, not proven properties of any generated image.",
+      "Schema and structured-rule checks do not validate hydrology, crossings, visual occlusion, room topology or prose contradictions.",
+      "Target pixel dimensions and file format are export goals. Verify actual image metadata and calibrate the VTT after generation."
+    ]
+  },
+  "image_status": "not_generated",
+  "atlas_setup": {
+    "platform": "atlas-vtt",
+    "status": "plan_only_not_imported",
+    "scene_export": "not_created",
+    "scene_extension": ".atlasmap",
+    "background_audience": "player",
+    "background_use": "player_safe_candidate",
+    "coordinate_basis": "normalized_image_space_not_atlas_world_coordinates",
+    "target_pixels": [
+      3840,
+      2160
+    ],
+    "grid_field_hints": {
+      "enabled": true,
+      "visible": true,
+      "snapToGrid": true,
+      "type": "hex-vertical",
+      "size": 120,
+      "offsetX": 0,
+      "offsetY": 0,
+      "unitType": "feet",
+      "measurementType": "units",
+      "unitDistance": 31680
+    },
+    "source_grid": {
+      "columns": null,
+      "hex_cell_width_px": 120,
+      "hex_orientation": "pointy_top",
+      "offset_px": [
+        0,
+        0
+      ],
+      "pixels_per_cell": null,
+      "render": "vtt",
+      "rows": null,
+      "type": "hex",
+      "units": "mi",
+      "units_per_cell": 6
+    },
+    "text_label_candidates": [
+      {
+        "anchor": [
+          0.54,
+          0.39
+        ],
+        "entity_id": "citadel",
+        "id": "citadel-name",
+        "rotation_deg": 0,
+        "text": "CROWN OF TIDES",
+        "visibility": "public"
+      },
+      {
+        "anchor": [
+          0.81,
+          0.67
+        ],
+        "entity_id": "glass_spires",
+        "id": "spires-name",
+        "rotation_deg": 0,
+        "text": "THE THREE LISTENERS",
+        "visibility": "public"
+      },
+      {
+        "anchor": [
+          0.17,
+          0.46
+        ],
+        "entity_id": "western_wood",
+        "id": "wood-name",
+        "rotation_deg": 0,
+        "text": "THE PALE BOUGHS",
+        "visibility": "public"
+      },
+      {
+        "anchor": [
+          0.27,
+          0.96
+        ],
+        "entity_id": "south_port",
+        "id": "port-name",
+        "rotation_deg": 0,
+        "text": "LANTERN QUAY",
+        "visibility": "public"
+      }
+    ],
+    "gm_note_pin_candidates": [],
+    "setup_steps": [
+      "Produce and inspect a player-safe base image; keep the editable master specification private.",
+      "Open Atlas VTT: Open dashboard in desktop Obsidian; choose the intended collection.",
+      "Import the local image with the asset manager + button, then create a scene from the map asset.",
+      "Align the grid manually; auto detection is an option for an image with an existing grid, not proof of correct alignment.",
+      "Add labels with Atlas text tools or a separately prepared overlay. Link Markdown or Atlas maps with note pins; pins are GM preparation aids.",
+      "Place tokens and configure fog, walls and lighting separately in Atlas as needed.",
+      "Present the scene in the separate player window, inspect disclosure, then reopen the scene to verify persistence."
+    ],
+    "calibration_notes": [
+      "All settings are candidates for manual calibration against the actual imported image.",
+      "Atlas has no mi unitType; converted distance to feet. Confirm the displayed scale."
+    ],
+    "acceptance_checks": [
+      "Inspect actual image dimensions and compare several cell spacings across the image after alignment.",
+      "Test token snapping and a known movement distance, including hex orientation if applicable.",
+      "Inspect the player window for unintended labels, tokens, secrets and revealed areas. Baked image content cannot be removed by GM visibility flags.",
+      "Reopen the .atlasmap scene and confirm background, grid and authored objects persist."
+    ]
+  }
+}
