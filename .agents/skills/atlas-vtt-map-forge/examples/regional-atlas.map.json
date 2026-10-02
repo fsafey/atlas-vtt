@@ -1,0 +1,712 @@
+{
+  "version": "1.0",
+  "id": "lantern-marches",
+  "revision": 1,
+  "title": "The Lantern Marches",
+  "map_type": "regional",
+  "purpose": "Player-facing exploration atlas for choosing routes between a fortified city, wild country and uncanny landmarks. Not a token-scale battlemap.",
+  "inspiration": {
+    "premise": "A river kingdom survives under an ancient astronomical citadel, while three glass monoliths awaken on its eastern frontier.",
+    "mood": [
+      "wonder",
+      "weathered grandeur",
+      "inviting mystery"
+    ],
+    "novelty": "balanced",
+    "motifs": [
+      "bronze astronomical circles",
+      "pale limestone",
+      "amber reeds"
+    ],
+    "references": [
+      {
+        "id": "regional-reference",
+        "kind": "description",
+        "source": "Visual observations from the user-provided regional-map screenshot; image bytes are not bundled.",
+        "role": "style",
+        "use_traits": [
+          "fine hand-inked terrain",
+          "restrained watercolor washes",
+          "pictorial mountains and buildings within overhead geography",
+          "one dominant architectural landmark",
+          "varied regional silhouettes"
+        ],
+        "ignore_traits": [
+          "original place names and exact geography",
+          "numbered hex overlay",
+          "mouse pointer",
+          "interface pins",
+          "cropped banner"
+        ]
+      }
+    ]
+  },
+  "canvas": {
+    "aspect_ratio": [
+      16,
+      9
+    ],
+    "target_pixels": [
+      3840,
+      2160
+    ],
+    "margin_fraction": 0.03
+  },
+  "style": {
+    "preset": "illustrated_adventure_atlas",
+    "perspective": "illustrated_oblique",
+    "medium": "Fine ink-and-watercolor fantasy cartography with carefully drawn miniature architecture.",
+    "linework": "Thin charcoal contours; finer hatching inside landforms; distinct silhouettes without heavy comic outlines.",
+    "palette": {
+      "water": "#728B9A",
+      "forest": "#899779",
+      "stone": "#B5B5A8",
+      "accent": "#B77543",
+      "paper": "#E5E0D3"
+    },
+    "surface_texture": "Subtle matte paper tooth, not distressed parchment stains. Low-contrast texture in open land and water.",
+    "lighting": "Soft overcast daylight with light coming from upper left; gentle relief shading, no cast shadows hiding paths.",
+    "density": "dense",
+    "focal_entity_id": "citadel",
+    "hierarchy": [
+      "citadel",
+      "glass_spires",
+      "river",
+      "copper_marsh",
+      "south_port"
+    ],
+    "border_treatment": "none; edge-to-edge geographic artwork"
+  },
+  "environment": {
+    "terrain_summary": "A broad south-draining valley between a wooded western slope and a steep eastern plateau. Northern mountains frame the citadel; the southern river mouth opens to the sea.",
+    "season": "early autumn",
+    "time_of_day": "late morning",
+    "weather": "clear air under thin cloud",
+    "physical_logic": "mythic",
+    "exceptions": [
+      "The three glass spires are supernatural constructions; their shapes need not follow natural geology. Rivers and travel routes otherwise follow plausible terrain."
+    ]
+  },
+  "entities": {
+    "citadel": {
+      "name": "Crown of Tides",
+      "kind": "fort",
+      "visibility": "public",
+      "importance": "primary",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.43,
+          0.16,
+          0.22,
+          0.2
+        ]
+      },
+      "appearance": "A compact limestone city on a low escarpment, encircled by terraced walls and crowned by a single enormous tilted bronze astronomical ring. The ring is the unique regional silhouette.",
+      "must_show": [
+        "one oversized bronze ring, not a skull",
+        "three stepped wall terraces",
+        "one clear south-facing approach"
+      ],
+      "must_avoid": [
+        "a second ring",
+        "a floating city",
+        "a skull-shaped tower"
+      ],
+      "gameplay_role": "Main destination and navigational anchor",
+      "gm_notes": ""
+    },
+    "western_wood": {
+      "name": "The Pale Boughs",
+      "kind": "forest",
+      "visibility": "public",
+      "importance": "ambient",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.06,
+          0.24,
+          0.27,
+          0.37
+        ]
+      },
+      "appearance": "A dense wedge of white-barked forest with a few leaning old trunks and small clearings, drawn as coherent wooded masses rather than evenly scattered tree icons.",
+      "must_show": [
+        "two or three broad clearings"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "A slower wilderness route on the west side of the valley",
+      "gm_notes": ""
+    },
+    "northern_ridge": {
+      "name": "The Rimeback",
+      "kind": "mountain",
+      "visibility": "public",
+      "importance": "ambient",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.33,
+          0.035,
+          0.6,
+          0.12
+        ]
+      },
+      "appearance": "An irregular chain of pale angular peaks, taller to the northeast, lower at the central pass.",
+      "must_show": [
+        "a visible central pass"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Northern geographic boundary",
+      "gm_notes": ""
+    },
+    "glass_spires": {
+      "name": "The Three Listeners",
+      "kind": "landmark",
+      "visibility": "public",
+      "importance": "primary",
+      "quantity": 3,
+      "placement": {
+        "bounds": [
+          0.75,
+          0.3,
+          0.19,
+          0.34
+        ]
+      },
+      "appearance": "Exactly three tall, narrow smoky-glass monoliths rise from a flat basalt shelf. One is visibly tilted, one split at its top, and one intact. Space them so they remain individually countable.",
+      "must_show": [
+        "exactly three separate monoliths",
+        "three different silhouettes",
+        "a visible ascending trail from the west"
+      ],
+      "must_avoid": [
+        "extra miniature spires",
+        "floating rocks"
+      ],
+      "gameplay_role": "Eastern exploration objective visible from far away",
+      "gm_notes": ""
+    },
+    "copper_marsh": {
+      "name": "The Ember Reeds",
+      "kind": "terrain",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.59,
+          0.7,
+          0.21,
+          0.17
+        ]
+      },
+      "appearance": "A low copper-and-rust reed marsh with dark pools and a few raised hummocks, providing the sole warm color mass in the lower-right region.",
+      "must_show": [
+        "water visible between reed masses"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "A hazardous optional detour, not a wall of vegetation",
+      "gm_notes": ""
+    },
+    "river": {
+      "name": "The Lowwater",
+      "kind": "river",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.32,
+          0.32,
+          0.25,
+          0.64
+        ],
+        "path": [
+          [
+            0.54,
+            0.34
+          ],
+          [
+            0.55,
+            0.41
+          ],
+          [
+            0.52,
+            0.48
+          ],
+          [
+            0.51,
+            0.55
+          ],
+          [
+            0.49,
+            0.64
+          ],
+          [
+            0.44,
+            0.74
+          ],
+          [
+            0.37,
+            0.85
+          ],
+          [
+            0.34,
+            0.95
+          ]
+        ]
+      },
+      "appearance": "A connected slate-blue river descending from below the citadel through the valley and into a small southern delta. Keep upstream narrower and downstream broader.",
+      "must_show": [
+        "one continuous connected watercourse",
+        "a visible southern outlet"
+      ],
+      "must_avoid": [
+        "water flowing uphill",
+        "random disconnected river fragments"
+      ],
+      "gameplay_role": "Divides travel choices and establishes the valley direction",
+      "gm_notes": ""
+    },
+    "stone_bridge": {
+      "name": "The Last Arch",
+      "kind": "bridge",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.465,
+          0.525,
+          0.1,
+          0.06
+        ]
+      },
+      "appearance": "A single worn pale-stone arch spanning the narrow river, with visibly connected approaches on both banks.",
+      "must_show": [
+        "both bridge ends meet land",
+        "the river remains visible below the arch"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "A strategically legible chokepoint",
+      "gm_notes": ""
+    },
+    "south_port": {
+      "name": "Lantern Quay",
+      "kind": "settlement",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.25,
+          0.83,
+          0.15,
+          0.11
+        ]
+      },
+      "appearance": "A small fishing and caravan port on the western river mouth, with clustered low roofs, two short jetties and a warm beacon tower.",
+      "must_show": [
+        "two short jetties",
+        "one small beacon tower"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Southern campaign entry point",
+      "gm_notes": ""
+    },
+    "watchtower": {
+      "name": "The Leaning Watch",
+      "kind": "landmark",
+      "visibility": "public",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.18,
+          0.64,
+          0.055,
+          0.09
+        ]
+      },
+      "appearance": "One roofless square watchtower leaning slightly on a low grassy knoll. The missing upper corner makes it recognizable at small scale.",
+      "must_show": [
+        "one missing upper corner"
+      ],
+      "must_avoid": [],
+      "gameplay_role": "Western exploration objective",
+      "gm_notes": ""
+    },
+    "south_sea": {
+      "name": "The Somber Reach",
+      "kind": "water",
+      "visibility": "public",
+      "importance": "ambient",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.02,
+          0.935,
+          0.96,
+          0.065
+        ]
+      },
+      "appearance": "A calm strip of blue-gray coastal water at the lower edge; the Lowwater visibly empties here.",
+      "must_show": [],
+      "must_avoid": [],
+      "gameplay_role": "Southern boundary and river outlet",
+      "gm_notes": ""
+    },
+    "sealed_observatory": {
+      "name": "The Sealed Observatory",
+      "kind": "room",
+      "visibility": "gm_only",
+      "importance": "supporting",
+      "quantity": 1,
+      "placement": {
+        "bounds": [
+          0.555,
+          0.22,
+          0.035,
+          0.045
+        ]
+      },
+      "appearance": "A small concealed observatory chamber within the citadel.",
+      "must_show": [],
+      "must_avoid": [],
+      "gameplay_role": "Hidden discovery",
+      "gm_notes": "The green dial unlocks the room at midnight. Do not include the chamber, its marker or this fact in a player-facing image."
+    }
+  },
+  "connections": {
+    "pilgrim_road": {
+      "from": "south_port",
+      "to": "citadel",
+      "via": [
+        "stone_bridge"
+      ],
+      "kind": "road",
+      "visibility": "public",
+      "traversable": true,
+      "path": [
+        [
+          0.325,
+          0.885
+        ],
+        [
+          0.36,
+          0.78
+        ],
+        [
+          0.43,
+          0.66
+        ],
+        [
+          0.51,
+          0.55
+        ],
+        [
+          0.58,
+          0.44
+        ],
+        [
+          0.54,
+          0.29
+        ]
+      ],
+      "width_cells": null,
+      "appearance": "A pale packed-earth road, clearly differentiated from the blue river; it crosses only at the stone bridge."
+    },
+    "spire_ascent": {
+      "from": "citadel",
+      "to": "glass_spires",
+      "via": [],
+      "kind": "trail",
+      "visibility": "public",
+      "traversable": true,
+      "path": [
+        [
+          0.54,
+          0.29
+        ],
+        [
+          0.65,
+          0.34
+        ],
+        [
+          0.72,
+          0.43
+        ],
+        [
+          0.82,
+          0.46
+        ]
+      ],
+      "width_cells": null,
+      "appearance": "A narrow switchback ascent with a believable ramp onto the basalt shelf."
+    },
+    "western_branch": {
+      "from": "stone_bridge",
+      "to": "watchtower",
+      "via": [],
+      "kind": "trail",
+      "visibility": "public",
+      "traversable": true,
+      "path": [
+        [
+          0.51,
+          0.55
+        ],
+        [
+          0.39,
+          0.6
+        ],
+        [
+          0.3,
+          0.63
+        ],
+        [
+          0.205,
+          0.685
+        ]
+      ],
+      "width_cells": null,
+      "appearance": "A secondary dirt trail across open grass with occasional broken boundary stones."
+    },
+    "marsh_detour": {
+      "from": "stone_bridge",
+      "to": "copper_marsh",
+      "via": [],
+      "kind": "trail",
+      "visibility": "public",
+      "traversable": true,
+      "path": [
+        [
+          0.51,
+          0.55
+        ],
+        [
+          0.57,
+          0.62
+        ],
+        [
+          0.62,
+          0.68
+        ],
+        [
+          0.67,
+          0.77
+        ]
+      ],
+      "width_cells": null,
+      "appearance": "A narrow raised path ending at the marsh edge; do not conceal its entrance."
+    },
+    "secret_stair": {
+      "from": "citadel",
+      "to": "sealed_observatory",
+      "via": [],
+      "kind": "stair",
+      "visibility": "gm_only",
+      "traversable": true,
+      "path": [
+        [
+          0.54,
+          0.29
+        ],
+        [
+          0.572,
+          0.242
+        ]
+      ],
+      "width_cells": null,
+      "appearance": "A concealed internal stair."
+    }
+  },
+  "relationships": [
+    {
+      "from": "citadel",
+      "to": "stone_bridge",
+      "relation": "north_of",
+      "strength": "must",
+      "detail": "The city sits upstream above the river crossing."
+    },
+    {
+      "from": "glass_spires",
+      "to": "river",
+      "relation": "east_of",
+      "strength": "must",
+      "detail": "The spires occupy the eastern plateau, not the western forest."
+    },
+    {
+      "from": "watchtower",
+      "to": "river",
+      "relation": "west_of",
+      "strength": "must",
+      "detail": "Keep the watchtower on the same western side as the port approach."
+    },
+    {
+      "from": "stone_bridge",
+      "to": "river",
+      "relation": "crosses",
+      "strength": "must",
+      "detail": "The arch crosses the actual river, not a neighboring dry channel."
+    },
+    {
+      "from": "river",
+      "to": "south_sea",
+      "relation": "flows_into",
+      "strength": "must",
+      "detail": "The river outlet meets the coastal water without a strip of land blocking it."
+    },
+    {
+      "from": "sealed_observatory",
+      "to": "citadel",
+      "relation": "inside",
+      "strength": "must",
+      "detail": "This relationship is private and absent from player art."
+    }
+  ],
+  "gameplay": {
+    "grid": {
+      "type": "hex",
+      "render": "vtt",
+      "columns": null,
+      "rows": null,
+      "pixels_per_cell": null,
+      "hex_cell_width_px": 120,
+      "hex_orientation": "pointy_top",
+      "offset_px": [
+        0,
+        0
+      ],
+      "units_per_cell": 6,
+      "units": "mi"
+    },
+    "entry_ids": [
+      "south_port"
+    ],
+    "objective_ids": [
+      "citadel",
+      "glass_spires",
+      "watchtower"
+    ],
+    "require_reachability": true,
+    "minimum_path_width_cells": null,
+    "affordances": [
+      "a river chokepoint",
+      "a fast main road versus optional rough detours",
+      "a high eastern landmark visible from lower terrain"
+    ],
+    "must_preserve": [
+      "the public route graph",
+      "distinct silhouettes for city, spires and watchtower",
+      "an unbroken river outlet",
+      "broad quiet areas for reading terrain"
+    ]
+  },
+  "annotations": {
+    "label_mode": "postprocess",
+    "labels": [
+      {
+        "id": "citadel-name",
+        "entity_id": "citadel",
+        "text": "CROWN OF TIDES",
+        "anchor": [
+          0.54,
+          0.39
+        ],
+        "rotation_deg": 0,
+        "visibility": "public"
+      },
+      {
+        "id": "spires-name",
+        "entity_id": "glass_spires",
+        "text": "THE THREE LISTENERS",
+        "anchor": [
+          0.81,
+          0.67
+        ],
+        "rotation_deg": 0,
+        "visibility": "public"
+      },
+      {
+        "id": "wood-name",
+        "entity_id": "western_wood",
+        "text": "THE PALE BOUGHS",
+        "anchor": [
+          0.17,
+          0.46
+        ],
+        "rotation_deg": 0,
+        "visibility": "public"
+      },
+      {
+        "id": "port-name",
+        "entity_id": "south_port",
+        "text": "LANTERN QUAY",
+        "anchor": [
+          0.27,
+          0.96
+        ],
+        "rotation_deg": 0,
+        "visibility": "public"
+      },
+      {
+        "id": "vault-name",
+        "entity_id": "sealed_observatory",
+        "text": "SEALED OBSERVATORY",
+        "anchor": [
+          0.57,
+          0.24
+        ],
+        "rotation_deg": 0,
+        "visibility": "gm_only"
+      }
+    ],
+    "typography": "Small-cap serif geographic labels, dark charcoal, restrained tracking; add outside the image generator.",
+    "markers": "vtt",
+    "clear_zones": [
+      {
+        "bounds": [
+          0.43,
+          0.365,
+          0.22,
+          0.035
+        ],
+        "purpose": "low-detail ground for the citadel label"
+      }
+    ]
+  },
+  "production": {
+    "audience": "player",
+    "variant": "base",
+    "action": "new_image",
+    "base_image_reference": null,
+    "edit_scope": [],
+    "output_format": "png",
+    "must_include": [
+      "a uniquely recognizable astronomical citadel",
+      "three countable glass spires",
+      "a readable network of public travel routes"
+    ],
+    "must_avoid": [
+      "borrowed place names from the reference",
+      "UI screenshots",
+      "cursor arrows",
+      "painted VTT markers",
+      "photorealistic satellite terrain",
+      "a cinematic horizon",
+      "unrequested text",
+      "standing character tokens"
+    ],
+    "revision_notes": "Original demonstration setting. The supplied screenshot informed broad visual traits, not copied names or geography."
+  },
+  "locks": [
+    "/canvas",
+    "/style/perspective",
+    "/entities/citadel/placement",
+    "/entities/river/placement",
+    "/entities/glass_spires/quantity",
+    "/connections"
+  ]
+}

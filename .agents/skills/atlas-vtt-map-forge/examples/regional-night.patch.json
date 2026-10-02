@@ -1,0 +1,32 @@
+[
+  {
+    "op": "test",
+    "path": "/revision",
+    "value": 1
+  },
+  {
+    "op": "replace",
+    "path": "/production/variant",
+    "value": "moonlit"
+  },
+  {
+    "op": "replace",
+    "path": "/environment/time_of_day",
+    "value": "moonlit night"
+  },
+  {
+    "op": "replace",
+    "path": "/environment/weather",
+    "value": "clear night with no obscuring fog"
+  },
+  {
+    "op": "replace",
+    "path": "/style/lighting",
+    "value": "Cool moonlight from upper left, softly glowing windows and beacon lamps; preserve readable landforms and every route."
+  },
+  {
+    "op": "replace",
+    "path": "/production/revision_notes",
+    "value": "Night variant changes lighting and time only. To preserve an actual rendered map, attach its approved image and change production.action to edit_existing with a specific edit_scope."
+  }
+]

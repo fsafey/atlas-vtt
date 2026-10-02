@@ -1,0 +1,1007 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/atlas-vtt-map-forge/map-spec.schema.json",
+  "title": "Atlas VTT Map Forge canonical map specification",
+  "description": "Authoring data, not an image API request. All geometry and pixels are design targets pending rendered-image inspection.",
+  "type": "object",
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "map_type": {
+      "enum": [
+        "world",
+        "regional",
+        "settlement",
+        "battlemap",
+        "dungeon"
+      ]
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inspiration": {
+      "type": "object",
+      "properties": {
+        "premise": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mood": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "novelty": {
+          "enum": [
+            "grounded",
+            "balanced",
+            "fantastical"
+          ]
+        },
+        "motifs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reference"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "premise",
+        "mood",
+        "novelty",
+        "motifs",
+        "references"
+      ],
+      "additionalProperties": false
+    },
+    "canvas": {
+      "type": "object",
+      "properties": {
+        "aspect_ratio": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "integer",
+              "minimum": 1
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "target_pixels": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer",
+              "minimum": 128,
+              "maximum": 32768
+            },
+            {
+              "type": "integer",
+              "minimum": 128,
+              "maximum": 32768
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "margin_fraction": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.2
+        }
+      },
+      "required": [
+        "aspect_ratio",
+        "target_pixels",
+        "margin_fraction"
+      ],
+      "additionalProperties": false
+    },
+    "style": {
+      "type": "object",
+      "properties": {
+        "preset": {
+          "type": "string",
+          "minLength": 1
+        },
+        "perspective": {
+          "enum": [
+            "orthographic_top_down",
+            "illustrated_oblique"
+          ]
+        },
+        "medium": {
+          "type": "string",
+          "minLength": 1
+        },
+        "linework": {
+          "type": "string",
+          "minLength": 1
+        },
+        "palette": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "surface_texture": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lighting": {
+          "type": "string",
+          "minLength": 1
+        },
+        "density": {
+          "enum": [
+            "sparse",
+            "balanced",
+            "dense"
+          ]
+        },
+        "focal_entity_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "hierarchy": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "border_treatment": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "preset",
+        "perspective",
+        "medium",
+        "linework",
+        "palette",
+        "surface_texture",
+        "lighting",
+        "density",
+        "focal_entity_id",
+        "hierarchy",
+        "border_treatment"
+      ],
+      "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "terrain_summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "season": {
+          "type": "string",
+          "minLength": 1
+        },
+        "time_of_day": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weather": {
+          "type": "string",
+          "minLength": 1
+        },
+        "physical_logic": {
+          "enum": [
+            "naturalistic",
+            "mythic"
+          ]
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "terrain_summary",
+        "season",
+        "time_of_day",
+        "weather",
+        "physical_logic",
+        "exceptions"
+      ],
+      "additionalProperties": false
+    },
+    "entities": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^[a-z][a-z0-9_-]*$": {
+          "$ref": "#/$defs/entity"
+        }
+      },
+      "additionalProperties": false
+    },
+    "connections": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z][a-z0-9_-]*$": {
+          "$ref": "#/$defs/connection"
+        }
+      },
+      "additionalProperties": false
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relationship"
+      },
+      "minItems": 0
+    },
+    "gameplay": {
+      "type": "object",
+      "properties": {
+        "grid": {
+          "$ref": "#/$defs/grid"
+        },
+        "entry_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "objective_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "require_reachability": {
+          "type": "boolean"
+        },
+        "minimum_path_width_cells": {
+          "anyOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "affordances": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "must_preserve": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "grid",
+        "entry_ids",
+        "objective_ids",
+        "require_reachability",
+        "minimum_path_width_cells",
+        "affordances",
+        "must_preserve"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "type": "object",
+      "properties": {
+        "label_mode": {
+          "enum": [
+            "none",
+            "postprocess",
+            "baked"
+          ]
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/label"
+          },
+          "minItems": 0
+        },
+        "typography": {
+          "type": "string",
+          "minLength": 1
+        },
+        "markers": {
+          "enum": [
+            "none",
+            "vtt",
+            "postprocess"
+          ]
+        },
+        "clear_zones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "bounds": {
+                "$ref": "#/$defs/bounds"
+              },
+              "purpose": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "bounds",
+              "purpose"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "label_mode",
+        "labels",
+        "typography",
+        "markers",
+        "clear_zones"
+      ],
+      "additionalProperties": false
+    },
+    "production": {
+      "type": "object",
+      "properties": {
+        "audience": {
+          "enum": [
+            "player",
+            "gm"
+          ]
+        },
+        "variant": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action": {
+          "enum": [
+            "new_image",
+            "edit_existing"
+          ]
+        },
+        "base_image_reference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "edit_scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "output_format": {
+          "enum": [
+            "png",
+            "jpeg",
+            "webp"
+          ]
+        },
+        "must_include": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "must_avoid": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "revision_notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "audience",
+        "variant",
+        "action",
+        "base_image_reference",
+        "edit_scope",
+        "output_format",
+        "must_include",
+        "must_avoid",
+        "revision_notes"
+      ],
+      "additionalProperties": false
+    },
+    "locks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "version",
+    "id",
+    "revision",
+    "title",
+    "map_type",
+    "purpose",
+    "inspiration",
+    "canvas",
+    "style",
+    "environment",
+    "entities",
+    "connections",
+    "relationships",
+    "gameplay",
+    "annotations",
+    "production",
+    "locks"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "point": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "bounds": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        }
+      ],
+      "items": false,
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "reference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "kind": {
+          "enum": [
+            "description",
+            "image",
+            "url"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "style",
+            "layout",
+            "landmark",
+            "quality"
+          ]
+        },
+        "use_traits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "ignore_traits": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "source",
+        "role",
+        "use_traits",
+        "ignore_traits"
+      ],
+      "additionalProperties": false
+    },
+    "entity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "landmark",
+            "settlement",
+            "fort",
+            "forest",
+            "mountain",
+            "water",
+            "river",
+            "room",
+            "doorway",
+            "bridge",
+            "terrain",
+            "prop",
+            "hazard",
+            "other"
+          ]
+        },
+        "visibility": {
+          "enum": [
+            "public",
+            "gm_only"
+          ]
+        },
+        "importance": {
+          "enum": [
+            "primary",
+            "supporting",
+            "ambient"
+          ]
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "placement": {
+          "type": "object",
+          "properties": {
+            "bounds": {
+              "$ref": "#/$defs/bounds"
+            },
+            "path": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/point"
+              },
+              "minItems": 2
+            }
+          },
+          "required": [
+            "bounds"
+          ],
+          "additionalProperties": false
+        },
+        "appearance": {
+          "type": "string",
+          "minLength": 1
+        },
+        "must_show": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "must_avoid": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0
+        },
+        "gameplay_role": {
+          "type": "string"
+        },
+        "gm_notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "kind",
+        "visibility",
+        "importance",
+        "quantity",
+        "placement",
+        "appearance",
+        "must_show",
+        "must_avoid",
+        "gameplay_role",
+        "gm_notes"
+      ],
+      "additionalProperties": false
+    },
+    "connection": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "to": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "via": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "kind": {
+          "enum": [
+            "road",
+            "trail",
+            "corridor",
+            "stair",
+            "ferry",
+            "bridge_crossing",
+            "custom"
+          ]
+        },
+        "visibility": {
+          "enum": [
+            "public",
+            "gm_only"
+          ]
+        },
+        "traversable": {
+          "type": "boolean"
+        },
+        "path": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/point"
+          },
+          "minItems": 2
+        },
+        "width_cells": {
+          "anyOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "appearance": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "from",
+        "to",
+        "via",
+        "kind",
+        "visibility",
+        "traversable",
+        "path",
+        "width_cells",
+        "appearance"
+      ],
+      "additionalProperties": false
+    },
+    "relationship": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "to": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "relation": {
+          "enum": [
+            "north_of",
+            "south_of",
+            "east_of",
+            "west_of",
+            "inside",
+            "adjacent_to",
+            "crosses",
+            "flows_into",
+            "overlooks",
+            "blocks",
+            "avoids"
+          ]
+        },
+        "strength": {
+          "enum": [
+            "must",
+            "prefer"
+          ]
+        },
+        "detail": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "from",
+        "to",
+        "relation",
+        "strength",
+        "detail"
+      ],
+      "additionalProperties": false
+    },
+    "grid": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "none",
+            "square",
+            "hex"
+          ]
+        },
+        "render": {
+          "enum": [
+            "none",
+            "vtt",
+            "postprocess",
+            "baked"
+          ]
+        },
+        "columns": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "rows": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pixels_per_cell": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "hex_cell_width_px": {
+          "anyOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "hex_orientation": {
+          "enum": [
+            "none",
+            "flat_top",
+            "pointy_top"
+          ]
+        },
+        "offset_px": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "number",
+              "minimum": 0
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "units_per_cell": {
+          "anyOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "units": {
+          "enum": [
+            "ft",
+            "m",
+            "mi",
+            "km",
+            "abstract"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "render",
+        "columns",
+        "rows",
+        "pixels_per_cell",
+        "hex_cell_width_px",
+        "hex_orientation",
+        "offset_px",
+        "units_per_cell",
+        "units"
+      ],
+      "additionalProperties": false
+    },
+    "label": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*$"
+        },
+        "entity_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "anchor": {
+          "$ref": "#/$defs/point"
+        },
+        "rotation_deg": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "visibility": {
+          "enum": [
+            "public",
+            "gm_only"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "entity_id",
+        "text",
+        "anchor",
+        "rotation_deg",
+        "visibility"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

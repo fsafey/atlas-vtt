@@ -1,0 +1,3 @@
+Use $atlas-vtt-map-forge to develop this map for Atlas VTT in desktop Obsidian. Start from my brief and known references. Resolve only unanswered decisions that materially change geography, playability, appearance, grid scale or player disclosure.
+
+Return the complete editable map_spec, player-safe compiled image instructions and compiled.atlas_setup. Include native square/hex grid field hints, label and GM note-pin plans, and the manual asset-to-scene setup steps. Keep private lore separate and preserve source IDs and locks when revising. Do not generate an image or claim that the JSON is an imported .atlasmap scene.
