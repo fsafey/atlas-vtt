@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "spec_id": "marsh-gryphon-study",
+  "revision": 1,
+  "subjects": [
+    {
+      "subject_id": "marsh-gryphon",
+      "name": "Marsh gryphon",
+      "visible_identity": {
+        "form": "Original six-limbed marsh gryphon",
+        "apparent_age": "Mature adult",
+        "anatomy": [
+          {
+            "feature": "legs",
+            "count": 4,
+            "details": "Four feline legs with broad paws; wings are separate appendages"
+          },
+          {
+            "feature": "wings",
+            "count": 2,
+            "details": "A separate feathered pair attached above the forelegs"
+          },
+          {
+            "feature": "tails",
+            "count": 1,
+            "details": "Long feline tail with a reed-colored feather tuft"
+          },
+          {
+            "feature": "horns",
+            "count": 0,
+            "details": "No horns"
+          }
+        ],
+        "face_head": "Broad raptor beak, amber eyes, and a swept-back feather crest",
+        "coloring": [
+          "Slate blue dorsal feathers",
+          "Cream chest feathers",
+          "Deep brown feline hindquarters",
+          "Amber eyes"
+        ],
+        "distinctive_features": [
+          "A single cream crescent patch below the left eye"
+        ],
+        "clothing": [],
+        "equipment": []
+      },
+      "identity_reference_ids": [],
+      "gm_only": false,
+      "gm_notes": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "gryphon-full-body",
+      "subject_id": "marsh-gryphon",
+      "title": "Marsh gryphon identity illustration",
+      "intended_use": "Full-body creature introduction, not a tabletop piece",
+      "intent": "generate",
+      "framing": "full_body",
+      "viewpoint": "Eye level, three-quarter side view",
+      "pose": "Standing with all four paws visible and both wings partly spread",
+      "expression": "Alert, curious, and calm",
+      "background": {
+        "mode": "transparent",
+        "description": "Actual transparent background; retain clean feather and fur edges"
+      },
+      "output": {
+        "width_px": 2048,
+        "height_px": 2048,
+        "aspect_ratio": [
+          1,
+          1
+        ]
+      },
+      "art_direction": {
+        "medium": "Fantasy natural-history illustration",
+        "rendering": "Painterly feather and fur detail with crisp silhouette",
+        "palette": [
+          "Slate blue",
+          "Cream",
+          "Deep brown",
+          "Amber"
+        ],
+        "lighting": "Soft neutral studio light",
+        "mood": "Believable wild animal rather than threatening monster"
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [
+        "Keep beak, crest, four paws, two wingtips, and entire tail inside the frame",
+        "Readable silhouette with margin around extremities",
+        "No token ring, ground plane, text, or interface"
+      ],
+      "gm_only": false
+    }
+  ],
+  "references": [],
+  "locks": [
+    "/subjects/0/visible_identity/anatomy",
+    "/subjects/0/visible_identity/distinctive_features"
+  ],
+  "assumptions": [
+    "Original demonstration anatomy; image output remains ungenerated"
+  ],
+  "gm_notes": []
+}

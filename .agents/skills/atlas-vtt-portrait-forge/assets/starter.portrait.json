@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "spec_id": "portrait-study",
+  "revision": 1,
+  "subjects": [
+    {
+      "subject_id": "subject-01",
+      "name": "Unnamed subject",
+      "visible_identity": {
+        "form": "",
+        "apparent_age": null,
+        "anatomy": [],
+        "face_head": "",
+        "coloring": [],
+        "distinctive_features": [],
+        "clothing": [],
+        "equipment": []
+      },
+      "identity_reference_ids": [],
+      "gm_only": false,
+      "gm_notes": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "portrait-01",
+      "subject_id": "subject-01",
+      "title": "Subject portrait",
+      "intended_use": "",
+      "intent": "generate",
+      "framing": "bust",
+      "viewpoint": "",
+      "pose": "",
+      "expression": "",
+      "background": {
+        "mode": "unspecified",
+        "description": ""
+      },
+      "output": {
+        "width_px": null,
+        "height_px": null,
+        "aspect_ratio": null
+      },
+      "art_direction": {
+        "medium": "",
+        "rendering": "",
+        "palette": [],
+        "lighting": "",
+        "mood": ""
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [],
+      "gm_only": false
+    }
+  ],
+  "references": [],
+  "locks": [],
+  "assumptions": [],
+  "gm_notes": []
+}

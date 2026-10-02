@@ -1,0 +1,6 @@
+interface:
+  display_name: "Atlas VTT Portrait Forge"
+  short_description: "Character and creature portraits with editable identity"
+  default_prompt: "Use $atlas-vtt-portrait-forge to create a character or creature portrait, preserve its visual identity in an editable specification, and inspect the requested image."
+policy:
+  allow_implicit_invocation: true
