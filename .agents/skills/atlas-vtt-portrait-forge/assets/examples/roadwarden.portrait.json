@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "spec_id": "roadwarden-study",
+  "revision": 1,
+  "subjects": [
+    {
+      "subject_id": "neris",
+      "name": "Neris, roadwarden",
+      "visible_identity": {
+        "form": "Human roadwarden",
+        "apparent_age": "Early forties",
+        "anatomy": [
+          {
+            "feature": "arms",
+            "count": 2,
+            "details": "Ordinary human proportions"
+          },
+          {
+            "feature": "legs",
+            "count": 2,
+            "details": "Outside the bust framing"
+          }
+        ],
+        "face_head": "Broad face, short dark curls, grey eyes, and a narrow split in the right eyebrow",
+        "coloring": [
+          "Warm brown skin",
+          "Dark brown hair",
+          "Grey eyes"
+        ],
+        "distinctive_features": [
+          "Small split in the right eyebrow",
+          "One round copper cloak clasp at the throat"
+        ],
+        "clothing": [
+          "Moss green wool cloak",
+          "Charcoal linen tunic"
+        ],
+        "equipment": [
+          "Weathered leather shoulder strap visible across the chest"
+        ]
+      },
+      "identity_reference_ids": [],
+      "gm_only": false,
+      "gm_notes": [
+        "Neris privately carries an unopened warning. Do not publish this note."
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "neris-bust",
+      "subject_id": "neris",
+      "title": "Neris introduction portrait",
+      "intended_use": "Character introduction illustration in campaign notes",
+      "intent": "generate",
+      "framing": "bust",
+      "viewpoint": "Eye level, three-quarter view",
+      "pose": "Relaxed shoulders, head turned gently toward the viewer",
+      "expression": "Watchful and quietly kind",
+      "background": {
+        "mode": "solid",
+        "description": "Muted warm stone color with subtle paper texture"
+      },
+      "output": {
+        "width_px": 1024,
+        "height_px": 1536,
+        "aspect_ratio": [
+          2,
+          3
+        ]
+      },
+      "art_direction": {
+        "medium": "Painterly fantasy illustration",
+        "rendering": "Fine ink accents with restrained opaque watercolor and clear material textures",
+        "palette": [
+          "Moss green cloak",
+          "Warm copper clasp",
+          "Charcoal tunic",
+          "Muted stone background"
+        ],
+        "lighting": "Soft window light from the viewer left",
+        "mood": "Steady, humane, and travel worn"
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [
+        "Keep the face and eyebrow mark unobstructed",
+        "Frame from upper chest upward with headroom",
+        "No baked text, token border, or interface"
+      ],
+      "gm_only": false
+    }
+  ],
+  "references": [],
+  "locks": [
+    "/subjects/0/visible_identity/face_head",
+    "/subjects/0/visible_identity/distinctive_features"
+  ],
+  "assumptions": [
+    "Original demonstration subject; no existing campaign identity reference was supplied"
+  ],
+  "gm_notes": []
+}

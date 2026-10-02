@@ -1,0 +1,21 @@
+{
+  "expected_revision": 1,
+  "changes": [
+    {
+      "path": "/subjects/0/visible_identity/clothing",
+      "value": [
+        "Navy blue wool cloak",
+        "Charcoal linen tunic"
+      ]
+    },
+    {
+      "path": "/assets/0/art_direction/palette",
+      "value": [
+        "Navy blue cloak",
+        "Warm copper clasp",
+        "Charcoal tunic",
+        "Muted stone background"
+      ]
+    }
+  ]
+}

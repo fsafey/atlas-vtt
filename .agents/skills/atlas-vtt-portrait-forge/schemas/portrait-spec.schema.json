@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atlas VTT Portrait authoring source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "spec_id", "revision", "subjects", "assets", "references", "locks", "assumptions", "gm_notes"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "spec_id": {"$ref": "#/$defs/id"},
+    "revision": {"type": "integer", "minimum": 1},
+    "subjects": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/subject"}},
+    "assets": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/asset"}},
+    "references": {"type": "array", "items": {"$ref": "#/$defs/reference"}},
+    "locks": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^/"}},
+    "assumptions": {"$ref": "#/$defs/strings"},
+    "gm_notes": {"$ref": "#/$defs/strings"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$", "maxLength": 80},
+    "strings": {"type": "array", "items": {"type": "string"}},
+    "subject": {
+      "type": "object", "additionalProperties": false,
+      "required": ["subject_id", "name", "visible_identity", "identity_reference_ids", "gm_only", "gm_notes"],
+      "properties": {
+        "subject_id": {"$ref": "#/$defs/id"}, "name": {"type": "string"},
+        "visible_identity": {"$ref": "#/$defs/identity"},
+        "identity_reference_ids": {"$ref": "#/$defs/strings", "uniqueItems": true},
+        "gm_only": {"type": "boolean"}, "gm_notes": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["form", "apparent_age", "anatomy", "face_head", "coloring", "distinctive_features", "clothing", "equipment"],
+      "properties": {
+        "form": {"type": "string"}, "apparent_age": {"type": ["string", "null"]},
+        "anatomy": {"type": "array", "items": {
+          "type": "object", "additionalProperties": false, "required": ["feature", "count", "details"],
+          "properties": {"feature": {"type": "string", "minLength": 1}, "count": {"type": "integer", "minimum": 0}, "details": {"type": "string"}}
+        }},
+        "face_head": {"type": "string"}, "coloring": {"$ref": "#/$defs/strings"},
+        "distinctive_features": {"$ref": "#/$defs/strings"}, "clothing": {"$ref": "#/$defs/strings"}, "equipment": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "asset": {
+      "type": "object", "additionalProperties": false,
+      "required": ["asset_id", "subject_id", "title", "intended_use", "intent", "framing", "viewpoint", "pose", "expression", "background", "output", "art_direction", "reference_ids", "edit_target_ref", "constraints", "gm_only"],
+      "properties": {
+        "asset_id": {"$ref": "#/$defs/id"}, "subject_id": {"$ref": "#/$defs/id"},
+        "title": {"type": "string"}, "intended_use": {"type": "string"},
+        "intent": {"enum": ["generate", "edit"]}, "framing": {"enum": ["face", "bust", "full_body"]},
+        "viewpoint": {"type": "string"}, "pose": {"type": "string"}, "expression": {"type": "string"},
+        "wardrobe": {
+          "type": "object", "additionalProperties": false,
+          "properties": {"clothing": {"$ref": "#/$defs/strings"}, "equipment": {"$ref": "#/$defs/strings"}}
+        },
+        "background": {
+          "type": "object", "additionalProperties": false, "required": ["mode", "description"],
+          "properties": {"mode": {"enum": ["unspecified", "solid", "environment", "transparent"]}, "description": {"type": "string"}}
+        },
+        "output": {
+          "type": "object", "additionalProperties": false, "required": ["width_px", "height_px", "aspect_ratio"],
+          "properties": {
+            "width_px": {"type": ["integer", "null"], "minimum": 1}, "height_px": {"type": ["integer", "null"], "minimum": 1},
+            "aspect_ratio": {"type": ["array", "null"], "items": {"type": "integer", "minimum": 1}, "minItems": 2, "maxItems": 2}
+          }
+        },
+        "art_direction": {
+          "type": "object", "additionalProperties": false, "required": ["medium", "rendering", "palette", "lighting", "mood"],
+          "properties": {"medium": {"type": "string"}, "rendering": {"type": "string"}, "palette": {"$ref": "#/$defs/strings"}, "lighting": {"type": "string"}, "mood": {"type": "string"}}
+        },
+        "reference_ids": {"$ref": "#/$defs/strings", "uniqueItems": true},
+        "edit_target_ref": {"anyOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+        "constraints": {"$ref": "#/$defs/strings"}, "gm_only": {"type": "boolean"}
+      }
+    },
+    "reference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["reference_id", "locator", "role", "inspection", "use", "ignore", "approved_identity", "gm_only"],
+      "properties": {
+        "reference_id": {"$ref": "#/$defs/id"}, "locator": {"type": "string", "minLength": 1},
+        "role": {"enum": ["identity", "style", "pose", "clothing", "edit_target", "quality"]},
+        "inspection": {"enum": ["uninspected", "inspected", "unavailable"]},
+        "use": {"$ref": "#/$defs/strings"}, "ignore": {"$ref": "#/$defs/strings"},
+        "approved_identity": {"type": "boolean"}, "gm_only": {"type": "boolean"}
+      }
+    }
+  }
+}
