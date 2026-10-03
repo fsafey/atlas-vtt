@@ -1,0 +1,387 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "spec_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "locks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "art_direction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string"
+        },
+        "palette": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "edge_treatment": {
+          "type": "string"
+        },
+        "lighting": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "style",
+        "palette",
+        "edge_treatment",
+        "lighting"
+      ]
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "reference_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "enum": [
+              "identity",
+              "style",
+              "viewpoint",
+              "material",
+              "scale",
+              "edit_target"
+            ]
+          },
+          "inspection": {
+            "enum": [
+              "inspected",
+              "uninspected",
+              "unavailable"
+            ]
+          },
+          "use": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "ignore": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "approved": {
+            "type": "boolean"
+          },
+          "gm_only": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "reference_id",
+          "locator",
+          "role",
+          "inspection",
+          "use",
+          "ignore",
+          "approved",
+          "gm_only"
+        ]
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "object_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "furniture",
+              "vegetation",
+              "rock",
+              "obstacle",
+              "structure",
+              "vehicle"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "materials": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "viewpoint": {
+            "enum": [
+              "orthographic_top_down",
+              "isometric",
+              "side",
+              "custom"
+            ]
+          },
+          "orientation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "footprint": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "width": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "exclusiveMinimum": 0
+              },
+              "length": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "exclusiveMinimum": 0
+              },
+              "unit": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "width",
+              "length",
+              "unit"
+            ]
+          },
+          "composition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "whole_object": {
+                "const": true
+              },
+              "clear_margin_fraction": {
+                "type": "number",
+                "minimum": 0,
+                "exclusiveMaximum": 0.5
+              },
+              "base": {
+                "enum": [
+                  "none",
+                  "intentional"
+                ]
+              },
+              "anchor": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "minItems": 2,
+                "maxItems": 2
+              }
+            },
+            "required": [
+              "whole_object",
+              "clear_margin_fraction",
+              "base",
+              "anchor"
+            ]
+          },
+          "shadow": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "mode": {
+                "enum": [
+                  "none",
+                  "contact",
+                  "cast"
+                ]
+              },
+              "direction_deg": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "exclusiveMaximum": 360
+              },
+              "reach_fraction": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "required": [
+              "mode",
+              "direction_deg",
+              "reach_fraction"
+            ]
+          },
+          "output": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "width_px": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "height_px": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "background": {
+                "enum": [
+                  "transparent",
+                  "solid"
+                ]
+              },
+              "backdrop": {
+                "type": "string"
+              },
+              "preview_long_edge_px": {
+                "type": "integer",
+                "minimum": 16
+              }
+            },
+            "required": [
+              "width_px",
+              "height_px",
+              "background",
+              "backdrop",
+              "preview_long_edge_px"
+            ]
+          },
+          "reference_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "uniqueItems": true
+          },
+          "gm_only": {
+            "type": "boolean"
+          },
+          "edit": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "target_reference_id": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9-]*$"
+              },
+              "change": {
+                "type": "string",
+                "minLength": 1
+              },
+              "preserve": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "target_reference_id",
+              "change",
+              "preserve"
+            ]
+          }
+        },
+        "required": [
+          "asset_id",
+          "object_id",
+          "name",
+          "kind",
+          "description",
+          "materials",
+          "viewpoint",
+          "orientation",
+          "footprint",
+          "composition",
+          "shadow",
+          "output",
+          "reference_ids",
+          "gm_only"
+        ]
+      },
+      "minItems": 1
+    },
+    "gm_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "spec_id",
+    "revision",
+    "locks",
+    "art_direction",
+    "assumptions",
+    "references",
+    "assets",
+    "gm_notes"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atlas props and terrain authoring specification"
+}

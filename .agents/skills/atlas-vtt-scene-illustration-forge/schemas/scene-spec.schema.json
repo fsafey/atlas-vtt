@@ -1,0 +1,446 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scene illustration authoring source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "spec_id",
+    "revision",
+    "locations",
+    "assets",
+    "references",
+    "locks",
+    "assumptions",
+    "gm_notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "spec_id": {
+      "$ref": "#/$defs/id"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/location"
+      },
+      "minItems": 1
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/asset"
+      },
+      "minItems": 1
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      },
+      "minItems": 0
+    },
+    "locks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gm_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "location_id",
+        "name",
+        "description",
+        "architecture",
+        "landmarks",
+        "identity_reference_ids",
+        "gm_only",
+        "gm_notes"
+      ],
+      "properties": {
+        "location_id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "architecture": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "landmarks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "identity_reference_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "gm_only": {
+          "type": "boolean"
+        },
+        "gm_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "asset_id",
+        "location_id",
+        "title",
+        "kind",
+        "intended_use",
+        "intent",
+        "moment",
+        "visible_changes",
+        "composition",
+        "atmosphere",
+        "art_direction",
+        "background",
+        "output",
+        "reference_ids",
+        "edit_target_ref",
+        "edit_scope",
+        "lettering",
+        "constraints",
+        "gm_only"
+      ],
+      "properties": {
+        "asset_id": {
+          "$ref": "#/$defs/id"
+        },
+        "location_id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "location_reveal",
+            "dramatic_scene"
+          ]
+        },
+        "intended_use": {
+          "type": "string"
+        },
+        "intent": {
+          "enum": [
+            "generate",
+            "edit"
+          ]
+        },
+        "moment": {
+          "type": "string"
+        },
+        "visible_changes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "composition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "viewpoint",
+            "framing",
+            "focal_point",
+            "depth",
+            "visible_figures"
+          ],
+          "properties": {
+            "viewpoint": {
+              "type": "string"
+            },
+            "framing": {
+              "type": "string"
+            },
+            "focal_point": {
+              "type": "string"
+            },
+            "depth": {
+              "type": "string"
+            },
+            "visible_figures": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "atmosphere": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "time",
+            "weather",
+            "lighting",
+            "mood"
+          ],
+          "properties": {
+            "time": {
+              "type": "string"
+            },
+            "weather": {
+              "type": "string"
+            },
+            "lighting": {
+              "type": "string"
+            },
+            "mood": {
+              "type": "string"
+            }
+          }
+        },
+        "art_direction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "medium",
+            "rendering",
+            "palette"
+          ],
+          "properties": {
+            "medium": {
+              "type": "string"
+            },
+            "rendering": {
+              "type": "string"
+            },
+            "palette": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "background": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode",
+            "description"
+          ],
+          "properties": {
+            "mode": {
+              "enum": [
+                "unspecified",
+                "opaque",
+                "transparent"
+              ]
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        },
+        "output": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "width_px",
+            "height_px",
+            "aspect_ratio"
+          ],
+          "properties": {
+            "width_px": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "height_px": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "aspect_ratio": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  ],
+                  "minItems": 2,
+                  "maxItems": 2
+                }
+              ]
+            }
+          }
+        },
+        "reference_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "edit_target_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "edit_scope": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "change",
+                "preserve"
+              ],
+              "properties": {
+                "change": {
+                  "type": "string"
+                },
+                "preserve": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "lettering": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "gm_only": {
+          "type": "boolean"
+        }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference_id",
+        "locator",
+        "role",
+        "inspection",
+        "use",
+        "ignore",
+        "gm_only"
+      ],
+      "properties": {
+        "reference_id": {
+          "$ref": "#/$defs/id"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "location_identity",
+            "style",
+            "composition",
+            "character_identity",
+            "edit_target",
+            "quality"
+          ]
+        },
+        "inspection": {
+          "enum": [
+            "uninspected",
+            "inspected",
+            "unavailable"
+          ]
+        },
+        "use": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ignore": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "gm_only": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

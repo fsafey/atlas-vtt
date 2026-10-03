@@ -1,0 +1,4 @@
+interface:
+  display_name: "Atlas VTT Item & Treasure Forge"
+  short_description: "Create recognizable loot and equipment illustrations"
+  default_prompt: "Use $atlas-vtt-item-treasure-forge to illustrate a distinctive treasure item and preserve its identity across revisions."

@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "spec_id": "roadwarden-token-study",
+  "revision": 1,
+  "subjects": [
+    {
+      "subject_id": "neris",
+      "name": "Neris, roadwarden",
+      "visible_identity": {
+        "form": "Human roadwarden",
+        "apparent_age": "Early forties",
+        "anatomy": [
+          {
+            "feature": "arms",
+            "count": 2,
+            "details": "Ordinary human proportions"
+          },
+          {
+            "feature": "legs",
+            "count": 2,
+            "details": "Outside the bust framing"
+          }
+        ],
+        "face_head": "Broad face, short dark curls, grey eyes, and a narrow split in the right eyebrow",
+        "coloring": [
+          "Warm brown skin",
+          "Dark brown hair",
+          "Grey eyes"
+        ],
+        "distinctive_features": [
+          "Small split in the right eyebrow",
+          "One round copper cloak clasp at the throat"
+        ],
+        "clothing": [
+          "Moss green wool cloak",
+          "Charcoal linen tunic",
+          "Plain charcoal trousers",
+          "Brown leather boots"
+        ],
+        "equipment": [
+          "Weathered leather shoulder strap visible across the chest"
+        ]
+      },
+      "identity_reference_ids": [],
+      "gm_only": false,
+      "gm_notes": [
+        "Neris privately carries an unopened warning. Do not publish this note."
+      ],
+      "portrait_origin": null
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "neris-circle",
+      "subject_id": "neris",
+      "title": "Neris circular token",
+      "intended_use": "Movable portrait token on a fantasy tabletop",
+      "intent": "generate",
+      "kind": "portrait_circle",
+      "viewpoint": "Eye level, three-quarter face",
+      "pose": "Face centered with cloak clasp below the chin",
+      "background": {
+        "mode": "transparent",
+        "description": "Transparent outer corners beyond the baked circular border"
+      },
+      "border": {
+        "mode": "baked",
+        "description": "A plain copper circular border with a dark inner edge"
+      },
+      "composition": {
+        "safe_margin_percent": 10,
+        "important_features": [
+          "Face, grey eyes, split right eyebrow, copper cloak clasp",
+          "Protect all hair and ears within the inner circle"
+        ]
+      },
+      "output": {
+        "width_px": 1024,
+        "height_px": 1024,
+        "aspect_ratio": [
+          1,
+          1
+        ],
+        "tabletop_sizes_px": [
+          64,
+          128
+        ]
+      },
+      "art_direction": {
+        "medium": "Painterly fantasy illustration",
+        "rendering": "Fine ink accents with restrained opaque watercolor and clear material textures",
+        "palette": [
+          "Moss green cloak",
+          "Warm copper clasp",
+          "Charcoal tunic",
+          "Muted stone background"
+        ],
+        "lighting": "Soft window light from the viewer left",
+        "mood": "Steady, humane, and travel worn"
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [
+        "Circular composition without baked labels or status markers",
+        "At 64 pixels prioritize face silhouette, green cloak, and copper clasp"
+      ],
+      "gm_only": false
+    },
+    {
+      "asset_id": "neris-top-down",
+      "subject_id": "neris",
+      "title": "Neris top-down token",
+      "intended_use": "Movable portrait token on a fantasy tabletop",
+      "intent": "generate",
+      "kind": "top_down",
+      "viewpoint": "orthographic_top_down",
+      "pose": "Standing alert with head facing the top of the canvas and arms slightly separated from the torso",
+      "background": {
+        "mode": "transparent",
+        "description": "Only the subject and carried equipment; no scenery or cast ground shadow"
+      },
+      "border": {
+        "mode": "none",
+        "description": "No border or ground disc"
+      },
+      "composition": {
+        "safe_margin_percent": 6,
+        "important_features": [
+          "Dark curls, moss cloak, copper clasp, and leather strap",
+          "Whole boots and hands inside the canvas"
+        ]
+      },
+      "output": {
+        "width_px": 1024,
+        "height_px": 1024,
+        "aspect_ratio": [
+          1,
+          1
+        ],
+        "tabletop_sizes_px": [
+          64,
+          128
+        ]
+      },
+      "art_direction": {
+        "medium": "Painterly fantasy illustration",
+        "rendering": "Fine ink accents with restrained opaque watercolor and clear material textures",
+        "palette": [
+          "Moss green cloak",
+          "Warm copper clasp",
+          "Charcoal tunic",
+          "Muted stone background"
+        ],
+        "lighting": "Soft window light from the viewer left",
+        "mood": "Steady, humane, and travel worn"
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [
+        "No isometric tilt or horizon",
+        "Preserve the same identity and wardrobe as the circular token"
+      ],
+      "gm_only": false
+    }
+  ],
+  "references": [],
+  "locks": [
+    "/subjects/0/visible_identity/face_head",
+    "/subjects/0/visible_identity/distinctive_features"
+  ],
+  "assumptions": [
+    "Original demonstration from the written Portrait Forge roadwarden example; no image has been generated, approved, or inspected",
+    "Plain charcoal trousers and brown boots are optional newly chosen unseen details for the top-down design; verify campaign identity before adopting them"
+  ],
+  "gm_notes": []
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "spec_id": "tideglass-saber",
+  "revision": 1,
+  "items": [
+    {
+      "item_id": "tideglass-saber",
+      "name": "Tideglass Saber",
+      "kind": "weapon",
+      "appearance": {
+        "shape": "Single-edged gently curved saber, one continuous blade, broad crescent guard, rounded pommel.",
+        "proportions": "Blade three times the grip length; guard extends wider than the grip.",
+        "materials": [
+          "Brushed steel blade",
+          "Patinated bronze guard and pommel",
+          "Woven leather grip"
+        ],
+        "colors": [
+          "Cool steel",
+          "Blue-green bronze patina",
+          "Dark red grip"
+        ],
+        "construction": [
+          "Guard seats between blade and grip; tight leather wrapping; guard has a solid attachment to the tang."
+        ],
+        "distinctive_marks": [
+          "Three small turquoise glass insets on the outward-facing guard",
+          "One crescent notch near the pommel"
+        ],
+        "wear": [
+          "Small scuffs along the guard; intact blade edge"
+        ]
+      },
+      "inscriptions": [
+        {
+          "inscription_id": "oath",
+          "text": "Return to the tide",
+          "placement": "Broad flat central face of the bronze guard",
+          "handling": "exact_composition"
+        }
+      ],
+      "gm_only": false,
+      "gm_notes": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "saber-closeup",
+      "title": "Tideglass Saber loot reveal",
+      "item_ids": [
+        "tideglass-saber"
+      ],
+      "intent": "generate",
+      "presentation": {
+        "viewpoint": "Shallow three-quarter side view with the broad guard face visible",
+        "arrangement": "One saber laid diagonally from lower left to upper right",
+        "framing": "Whole blade, guard, grip, and pommel with a clear margin",
+        "background": {
+          "mode": "solid",
+          "description": "Warm charcoal matte background"
+        },
+        "output": {
+          "width_px": null,
+          "height_px": null,
+          "aspect_ratio": [
+            3,
+            2
+          ]
+        }
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [
+        "Clear readable silhouette",
+        "No labels or inventory interface",
+        "Reserve guard surface for inscription composition"
+      ],
+      "gm_only": false
+    }
+  ],
+  "art_direction": {
+    "medium": "Painted fantasy object illustration",
+    "rendering": "Crisp material edges with restrained brush texture",
+    "palette": [
+      "Charcoal",
+      "Steel gray",
+      "Patinated bronze",
+      "Turquoise",
+      "Dark red"
+    ],
+    "lighting": "Soft upper-left light with controlled metal highlights",
+    "mood": "Weathered and valuable"
+  },
+  "references": [],
+  "locks": [
+    "/items/0/appearance/shape",
+    "/items/0/appearance/distinctive_marks",
+    "/items/0/inscriptions"
+  ],
+  "assumptions": [
+    "Original example design; illustration is a loot reveal."
+  ],
+  "gm_notes": [
+    "PRIVATE EXAMPLE: The owner hid a second artifact below the quay."
+  ]
+}

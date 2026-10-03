@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "set_id": "ferry-warning",
+  "revision": 1,
+  "locks": [
+    "/documents/0/wording/content",
+    "/documents/0/asset_id"
+  ],
+  "art_direction": "Original fantasy ink illustration on aged paper; restrained ochre and dark brown.",
+  "references": [],
+  "gm_notes": "PRIVATE: The ferry keeper knows the writer is an impostor. Do not share this master source.",
+  "documents": [
+    {
+      "asset_id": "letter-01",
+      "kind": "letter",
+      "gm_only": false,
+      "wording": {
+        "content": "To the keeper of the eastern ferry,\n\nWait until the third bell. Bring the copper lantern,\nand leave the lower gate unbarred.\n\nIf anyone asks, say: \"The tide remembers.\"\n\nMira & Orren\n",
+        "approval": "approved",
+        "basis": "Demonstration: supplied exact example wording authorized for final composition."
+      },
+      "material": "Warm brown rag paper with a folded lower corner; no damage in the text region.",
+      "illustration": "A small ferry and three reeds in the bottom reserved area. No seals, symbols, or lettering.",
+      "typography": {
+        "family": "serif",
+        "font_px": 32,
+        "line_height": 1.4,
+        "ink": "#281d13"
+      },
+      "layout": {
+        "width_px": 1200,
+        "height_px": 1600,
+        "margin_px": 100,
+        "reserved_illustration_px": 240
+      },
+      "reference_ids": []
+    }
+  ]
+}

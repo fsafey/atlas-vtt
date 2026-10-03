@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "spec_id": "scene-starter",
+  "revision": 1,
+  "locations": [
+    {
+      "location_id": "location-01",
+      "name": "Untitled location",
+      "description": "",
+      "architecture": [],
+      "landmarks": [],
+      "identity_reference_ids": [],
+      "gm_only": false,
+      "gm_notes": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "reveal-01",
+      "location_id": "location-01",
+      "title": "Untitled reveal",
+      "kind": "location_reveal",
+      "intended_use": "",
+      "intent": "generate",
+      "moment": "",
+      "visible_changes": [],
+      "composition": {
+        "viewpoint": "",
+        "framing": "",
+        "focal_point": "",
+        "depth": "",
+        "visible_figures": []
+      },
+      "atmosphere": {
+        "time": "",
+        "weather": "",
+        "lighting": "",
+        "mood": ""
+      },
+      "art_direction": {
+        "medium": "",
+        "rendering": "",
+        "palette": []
+      },
+      "background": {
+        "mode": "unspecified",
+        "description": ""
+      },
+      "output": {
+        "width_px": null,
+        "height_px": null,
+        "aspect_ratio": null
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "edit_scope": null,
+      "lettering": [],
+      "constraints": [],
+      "gm_only": false
+    }
+  ],
+  "references": [],
+  "locks": [],
+  "assumptions": [],
+  "gm_notes": []
+}

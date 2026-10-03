@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "set_id": "discovery-documents",
+  "revision": 1,
+  "locks": [
+    "/documents/0/wording/content"
+  ],
+  "art_direction": "Original fantasy ink illustration on aged paper; restrained ochre and dark brown.",
+  "references": [
+    {
+      "ref_id": "guild-seal",
+      "locator": "campaign-reference://ferry-guild-seal-not-attached",
+      "roles": [
+        "seal"
+      ],
+      "status": "unavailable",
+      "gm_only": false,
+      "use": "",
+      "ignore": ""
+    },
+    {
+      "ref_id": "private-impostor-sketch",
+      "locator": "campaign-reference://private-impostor",
+      "roles": [
+        "illustration"
+      ],
+      "status": "unavailable",
+      "gm_only": true,
+      "use": "",
+      "ignore": ""
+    }
+  ],
+  "gm_notes": "PRIVATE: The ferry keeper knows the writer is an impostor. Do not share this master source.",
+  "documents": [
+    {
+      "asset_id": "letter-01",
+      "kind": "letter",
+      "gm_only": false,
+      "wording": {
+        "content": "To the keeper of the eastern ferry,\n\nWait until the third bell. Bring the copper lantern,\nand leave the lower gate unbarred.\n\nIf anyone asks, say: \"The tide remembers.\"\n\nMira & Orren\n",
+        "approval": "approved",
+        "basis": "Demonstration: supplied exact example wording authorized for final composition."
+      },
+      "material": "Warm brown rag paper with a folded lower corner; no damage in the text region.",
+      "illustration": "A small ferry and three reeds in the bottom reserved area. No seals, symbols, or lettering.",
+      "typography": {
+        "family": "serif",
+        "font_px": 32,
+        "line_height": 1.4,
+        "ink": "#281d13"
+      },
+      "layout": {
+        "width_px": 1200,
+        "height_px": 1600,
+        "margin_px": 100,
+        "reserved_illustration_px": 240
+      },
+      "reference_ids": []
+    },
+    {
+      "asset_id": "poster-01",
+      "kind": "poster",
+      "gm_only": false,
+      "wording": {
+        "content": "FERRY CLOSED\n\nNo crossing after the third bell.\nKeepers of the eastern bank",
+        "approval": "approved",
+        "basis": "Demonstration: supplied exact example wording authorized for final composition."
+      },
+      "material": "Pale linen paper with an intact text region.",
+      "illustration": "An approved ferry guild seal in the bottom reserve.",
+      "typography": {
+        "family": "serif",
+        "font_px": 32,
+        "line_height": 1.4,
+        "ink": "#281d13"
+      },
+      "layout": {
+        "width_px": 1200,
+        "height_px": 1600,
+        "margin_px": 100,
+        "reserved_illustration_px": 240
+      },
+      "reference_ids": [
+        "guild-seal"
+      ]
+    },
+    {
+      "asset_id": "journal-01",
+      "kind": "journal",
+      "gm_only": true,
+      "wording": {
+        "content": "PRIVATE JOURNAL\nThe copper lantern marks the hidden landing.",
+        "approval": "approved",
+        "basis": "Demonstration: supplied exact example wording authorized for final composition."
+      },
+      "material": "Worn journal paper.",
+      "illustration": "A charcoal lantern sketch in the bottom reserve.",
+      "typography": {
+        "family": "serif",
+        "font_px": 32,
+        "line_height": 1.4,
+        "ink": "#281d13"
+      },
+      "layout": {
+        "width_px": 1200,
+        "height_px": 1600,
+        "margin_px": 100,
+        "reserved_illustration_px": 240
+      },
+      "reference_ids": []
+    },
+    {
+      "asset_id": "contract-01",
+      "kind": "contract",
+      "gm_only": false,
+      "wording": {
+        "content": "PASSAGE AGREEMENT\n\nOne copper lantern secures one crossing.\nPayment is due before the third bell.\n\nKeeper: __________________\nPassenger: _______________",
+        "approval": "approved",
+        "basis": "Demonstration: supplied exact example wording authorized for final composition."
+      },
+      "material": "Clean cream parchment.",
+      "illustration": "A simple rope knot in the bottom reserve, without lettering.",
+      "typography": {
+        "family": "serif",
+        "font_px": 32,
+        "line_height": 1.4,
+        "ink": "#281d13"
+      },
+      "layout": {
+        "width_px": 1200,
+        "height_px": 1600,
+        "margin_px": 100,
+        "reserved_illustration_px": 240
+      },
+      "reference_ids": []
+    },
+    {
+      "asset_id": "inscription-01",
+      "kind": "inscription",
+      "gm_only": false,
+      "wording": {
+        "content": "THE WATER RECEDES\nTHE ROAD REMAINS",
+        "approval": "approved",
+        "basis": "Demonstration: supplied exact example wording authorized for final composition."
+      },
+      "material": "A flat grey stone slab with a smooth text region.",
+      "illustration": "Weathered reeds at the lower corners, without glyphs or letters.",
+      "typography": {
+        "family": "monospace",
+        "font_px": 32,
+        "line_height": 1.4,
+        "ink": "#111111"
+      },
+      "layout": {
+        "width_px": 1200,
+        "height_px": 1600,
+        "margin_px": 100,
+        "reserved_illustration_px": 240
+      },
+      "reference_ids": []
+    }
+  ]
+}

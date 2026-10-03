@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "spec_id": "table-narrow-edit",
+  "revision": 1,
+  "locks": [
+    "/assets/0/footprint",
+    "/assets/0/composition"
+  ],
+  "art_direction": {
+    "style": "Painterly fantasy map asset with clear contour and restrained wood grain",
+    "palette": [
+      "warm oak",
+      "dull iron"
+    ],
+    "edge_treatment": "Clean antialiased cutout without bright halo",
+    "lighting": "Soft overhead diffuse light; minimal contact shadow"
+  },
+  "assumptions": [
+    "One reusable tabletop piece; no chairs or ground patch."
+  ],
+  "references": [
+    {
+      "reference_id": "approved-table",
+      "locator": "/campaign/art/waystation-table-approved.png",
+      "role": "edit_target",
+      "inspection": "unavailable",
+      "use": [],
+      "ignore": [],
+      "approved": true,
+      "gm_only": false
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "table-01",
+      "object_id": "oak-table",
+      "name": "Waystation table",
+      "kind": "furniture",
+      "description": "Single rectangular oak table, six broad planks, rounded corners, two visible iron corner braces. Every corner remains inside the frame.",
+      "materials": [
+        "weathered oak",
+        "dark iron"
+      ],
+      "viewpoint": "orthographic_top_down",
+      "orientation": "Long axis toward image top",
+      "footprint": {
+        "width": 3,
+        "length": 6,
+        "unit": "ft"
+      },
+      "composition": {
+        "whole_object": true,
+        "clear_margin_fraction": 0.06,
+        "base": "none",
+        "anchor": [
+          0.5,
+          0.5
+        ]
+      },
+      "shadow": {
+        "mode": "contact",
+        "direction_deg": null,
+        "reach_fraction": 0.03
+      },
+      "output": {
+        "width_px": 1024,
+        "height_px": 1536,
+        "background": "transparent",
+        "backdrop": "",
+        "preview_long_edge_px": 96
+      },
+      "reference_ids": [
+        "approved-table"
+      ],
+      "gm_only": false,
+      "edit": {
+        "target_reference_id": "approved-table",
+        "change": "Change only iron corner braces from dark iron to aged bronze.",
+        "preserve": [
+          "Object silhouette and plank count",
+          "Viewpoint, scale, anchor and padding",
+          "Wood color, lighting and alpha edges"
+        ]
+      }
+    }
+  ],
+  "gm_notes": [
+    "The table hides a GM-only clue. Do not put that clue in public appearance."
+  ]
+}

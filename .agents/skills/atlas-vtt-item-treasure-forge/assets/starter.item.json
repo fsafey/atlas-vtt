@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "spec_id": "treasure-01",
+  "revision": 1,
+  "items": [
+    {
+      "item_id": "item-01",
+      "name": "",
+      "kind": "artifact",
+      "appearance": {
+        "shape": "",
+        "proportions": "",
+        "materials": [],
+        "colors": [],
+        "construction": [],
+        "distinctive_marks": [],
+        "wear": []
+      },
+      "inscriptions": [],
+      "gm_only": false,
+      "gm_notes": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "item-closeup-01",
+      "title": "",
+      "item_ids": [
+        "item-01"
+      ],
+      "intent": "generate",
+      "presentation": {
+        "viewpoint": "",
+        "arrangement": "",
+        "framing": "",
+        "background": {
+          "mode": "unspecified",
+          "description": ""
+        },
+        "output": {
+          "width_px": null,
+          "height_px": null,
+          "aspect_ratio": null
+        }
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [],
+      "gm_only": false
+    }
+  ],
+  "art_direction": {
+    "medium": "",
+    "rendering": "",
+    "palette": [],
+    "lighting": "",
+    "mood": ""
+  },
+  "references": [],
+  "locks": [],
+  "assumptions": [],
+  "gm_notes": []
+}

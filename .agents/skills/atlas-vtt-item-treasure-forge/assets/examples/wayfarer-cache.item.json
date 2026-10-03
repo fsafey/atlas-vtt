@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "spec_id": "wayfarer-cache",
+  "revision": 1,
+  "items": [
+    {
+      "item_id": "amber-vial",
+      "name": "Amber Vial",
+      "kind": "consumable",
+      "appearance": {
+        "shape": "Short round clear glass bottle with one cork stopper and an intact neck.",
+        "proportions": "Compact hand-held object; illustrative size is not a game scale.",
+        "materials": [
+          "Clear glass",
+          "Cork",
+          "Amber liquid"
+        ],
+        "colors": [
+          "Clear glass",
+          "Amber liquid"
+        ],
+        "construction": [
+          "Parts connect coherently; show the named closure or handle."
+        ],
+        "distinctive_marks": [
+          "A single braided linen neck tie"
+        ],
+        "wear": [
+          "Light travel wear, intact and recognizable"
+        ]
+      },
+      "inscriptions": [],
+      "gm_only": false,
+      "gm_notes": []
+    },
+    {
+      "item_id": "sun-cup",
+      "name": "Sun Cup",
+      "kind": "valuable",
+      "appearance": {
+        "shape": "Small handled silver cup with a broad rim and stable flat foot.",
+        "proportions": "Compact hand-held object; illustrative size is not a game scale.",
+        "materials": [
+          "Tarnished silver"
+        ],
+        "colors": [
+          "Pale silver",
+          "Dark patina in recesses"
+        ],
+        "construction": [
+          "Parts connect coherently; show the named closure or handle."
+        ],
+        "distinctive_marks": [
+          "One embossed sun disk on the outward wall"
+        ],
+        "wear": [
+          "Light travel wear, intact and recognizable"
+        ]
+      },
+      "inscriptions": [],
+      "gm_only": false,
+      "gm_notes": []
+    },
+    {
+      "item_id": "trail-pouch",
+      "name": "Trail Pouch",
+      "kind": "equipment",
+      "appearance": {
+        "shape": "Compact oval leather pouch with a fold-over flap and one attached clasp.",
+        "proportions": "Compact hand-held object; illustrative size is not a game scale.",
+        "materials": [
+          "Brown leather",
+          "Brass clasp",
+          "Linen stitching"
+        ],
+        "colors": [
+          "Warm brown",
+          "Dull brass"
+        ],
+        "construction": [
+          "Parts connect coherently; show the named closure or handle."
+        ],
+        "distinctive_marks": [
+          "A repaired triangular stitch patch on the flap"
+        ],
+        "wear": [
+          "Light travel wear, intact and recognizable"
+        ]
+      },
+      "inscriptions": [],
+      "gm_only": false,
+      "gm_notes": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "amber-vial-closeup",
+      "title": "Amber Vial closeup",
+      "item_ids": [
+        "amber-vial"
+      ],
+      "intent": "generate",
+      "presentation": {
+        "viewpoint": "Three-quarter front view",
+        "arrangement": "One centered object",
+        "framing": "Entire object with generous clear margins",
+        "background": {
+          "mode": "transparent",
+          "description": "True transparent background with clean edges"
+        },
+        "output": {
+          "width_px": null,
+          "height_px": null,
+          "aspect_ratio": [
+            1,
+            1
+          ]
+        }
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [
+        "No cast shadow extending beyond the cutout",
+        "Consistent rendering with the other cache items"
+      ],
+      "gm_only": false
+    },
+    {
+      "asset_id": "sun-cup-closeup",
+      "title": "Sun Cup closeup",
+      "item_ids": [
+        "sun-cup"
+      ],
+      "intent": "generate",
+      "presentation": {
+        "viewpoint": "Three-quarter front view",
+        "arrangement": "One centered object",
+        "framing": "Entire object with generous clear margins",
+        "background": {
+          "mode": "transparent",
+          "description": "True transparent background with clean edges"
+        },
+        "output": {
+          "width_px": null,
+          "height_px": null,
+          "aspect_ratio": [
+            1,
+            1
+          ]
+        }
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [
+        "No cast shadow extending beyond the cutout",
+        "Consistent rendering with the other cache items"
+      ],
+      "gm_only": false
+    },
+    {
+      "asset_id": "trail-pouch-closeup",
+      "title": "Trail Pouch closeup",
+      "item_ids": [
+        "trail-pouch"
+      ],
+      "intent": "generate",
+      "presentation": {
+        "viewpoint": "Three-quarter front view",
+        "arrangement": "One centered object",
+        "framing": "Entire object with generous clear margins",
+        "background": {
+          "mode": "transparent",
+          "description": "True transparent background with clean edges"
+        },
+        "output": {
+          "width_px": null,
+          "height_px": null,
+          "aspect_ratio": [
+            1,
+            1
+          ]
+        }
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [
+        "No cast shadow extending beyond the cutout",
+        "Consistent rendering with the other cache items"
+      ],
+      "gm_only": false
+    }
+  ],
+  "art_direction": {
+    "medium": "Painted fantasy object illustration",
+    "rendering": "Soft brushwork with sharply readable material transitions",
+    "palette": [
+      "Warm leather",
+      "Cream",
+      "Deep amber",
+      "Silver"
+    ],
+    "lighting": "The same soft upper-left studio light for every asset",
+    "mood": "Practical travel finds"
+  },
+  "references": [],
+  "locks": [],
+  "assumptions": [
+    "Three separate illustrations requested; no contact sheet."
+  ],
+  "gm_notes": []
+}

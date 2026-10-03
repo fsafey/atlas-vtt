@@ -1,0 +1,4 @@
+interface:
+  display_name: "Atlas VTT Scene Illustration Forge"
+  short_description: "Atmospheric location reveals and dramatic scenes"
+  default_prompt: "Use $atlas-vtt-scene-illustration-forge to create a player-safe location reveal with an editable source, then render and inspect the requested illustration."

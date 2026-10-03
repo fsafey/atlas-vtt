@@ -1,0 +1,9 @@
+{
+  "expected_revision": 1,
+  "changes": [
+    {
+      "path": "/assets/2/description",
+      "value": "Standalone rectangular shed roof viewed directly overhead, brick-red shingles, one ridge beam, no walls or interior floorplan."
+    }
+  ]
+}

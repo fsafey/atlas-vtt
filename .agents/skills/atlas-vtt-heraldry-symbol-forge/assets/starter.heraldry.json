@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "spec_id": "new-heraldry",
+  "revision": 1,
+  "locks": [],
+  "factions": [
+    {
+      "faction_id": "faction-01",
+      "name": "New faction",
+      "identity": {
+        "motif": "",
+        "silhouette": "",
+        "arrangement": "",
+        "palette": [],
+        "distinctive_marks": [],
+        "constraints": []
+      },
+      "reference_ids": [],
+      "emblem_reference_id": null,
+      "consistency_anchor_asset_id": null,
+      "gm_only": false,
+      "gm_notes": ""
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "emblem-01",
+      "faction_id": "faction-01",
+      "title": "New faction emblem",
+      "intended_use": "",
+      "kind": "emblem",
+      "intent": "generate",
+      "carrier": {
+        "material": "",
+        "shape": "",
+        "viewpoint": "front-facing",
+        "orientation": "upright",
+        "composition": "centered, complete edges visible",
+        "reading_size_px": 64
+      },
+      "background": {
+        "mode": "unspecified",
+        "description": ""
+      },
+      "output": {
+        "width_px": null,
+        "height_px": null,
+        "aspect_ratio": null
+      },
+      "lettering": {
+        "wording": "",
+        "mode": "none",
+        "placement": ""
+      },
+      "art_direction": {
+        "medium": "",
+        "rendering": "",
+        "lighting": ""
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [],
+      "gm_only": false,
+      "gm_notes": ""
+    }
+  ],
+  "references": [],
+  "gm_notes": ""
+}

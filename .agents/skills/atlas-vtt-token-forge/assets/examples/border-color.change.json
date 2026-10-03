@@ -1,0 +1,9 @@
+{
+  "expected_revision": 1,
+  "changes": [
+    {
+      "path": "/assets/0/border/description",
+      "value": "A plain deep blue circular border with a dark inner edge"
+    }
+  ]
+}

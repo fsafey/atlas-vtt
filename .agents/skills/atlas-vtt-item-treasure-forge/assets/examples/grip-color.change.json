@@ -1,0 +1,13 @@
+{
+  "expected_revision": 1,
+  "changes": [
+    {
+      "path": "/items/0/appearance/colors/2",
+      "value": "Deep blue grip"
+    },
+    {
+      "path": "/art_direction/palette/4",
+      "value": "Deep blue"
+    }
+  ]
+}

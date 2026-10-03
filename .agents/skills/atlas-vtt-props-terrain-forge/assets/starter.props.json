@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "spec_id": "new-props",
+  "revision": 1,
+  "locks": [],
+  "art_direction": {
+    "style": "",
+    "palette": [],
+    "edge_treatment": "Clean silhouette with antialiased cutout edges",
+    "lighting": "Soft overhead diffuse light"
+  },
+  "assumptions": [
+    "Orthographic top-down placement; revise if the destination uses another viewpoint."
+  ],
+  "references": [],
+  "assets": [
+    {
+      "asset_id": "prop-01",
+      "object_id": "object-01",
+      "name": "",
+      "kind": "furniture",
+      "description": "",
+      "materials": [],
+      "viewpoint": "orthographic_top_down",
+      "orientation": "Long axis toward image top",
+      "footprint": {
+        "width": null,
+        "length": null,
+        "unit": "ft"
+      },
+      "composition": {
+        "whole_object": true,
+        "clear_margin_fraction": 0.06,
+        "base": "none",
+        "anchor": [
+          0.5,
+          0.5
+        ]
+      },
+      "shadow": {
+        "mode": "contact",
+        "direction_deg": null,
+        "reach_fraction": 0.03
+      },
+      "output": {
+        "width_px": null,
+        "height_px": null,
+        "background": "transparent",
+        "backdrop": "",
+        "preview_long_edge_px": 96
+      },
+      "reference_ids": [],
+      "gm_only": false
+    }
+  ],
+  "gm_notes": []
+}

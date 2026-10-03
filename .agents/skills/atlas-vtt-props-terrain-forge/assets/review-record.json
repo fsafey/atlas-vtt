@@ -1,0 +1,36 @@
+{
+  "spec_id": "new-props",
+  "asset_id": "prop-01",
+  "source_revision": 1,
+  "artifact_path": null,
+  "requested": {
+    "width_px": null,
+    "height_px": null,
+    "background": "transparent",
+    "clear_margin_fraction": 0.06,
+    "anchor": [
+      0.5,
+      0.5
+    ]
+  },
+  "observed": {
+    "width_px": null,
+    "height_px": null,
+    "alpha_min": null,
+    "alpha_max": null,
+    "transparent_pixels": null,
+    "partial_alpha_pixels": null,
+    "alpha_bounds_xyxy": null,
+    "clear_margins_px": null,
+    "anchor_alignment": null
+  },
+  "visual_findings": [],
+  "reference_comparison": null,
+  "brief": "incomplete",
+  "image": "not_generated",
+  "approval": "pending",
+  "atlas_import": "not_imported",
+  "placement": "not_checked",
+  "tabletop": "not_checked",
+  "checks": "not_run"
+}

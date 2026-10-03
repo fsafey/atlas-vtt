@@ -1,0 +1,9 @@
+{
+  "expected_revision": 1,
+  "changes": [
+    {
+      "path": "/assets/1/atmosphere/lighting",
+      "value": "Warm sunset from the left with a small amber lamp at the gate threshold"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "spec_id": "reed-ferry-hall",
+  "revision": 1,
+  "locations": [
+    {
+      "location_id": "ferry-hall",
+      "name": "Reed Ferry Hall",
+      "description": "An old riverside waiting hall built around a square stone hearth, with timber galleries above the ferry-facing windows.",
+      "architecture": [
+        "Four bowed timber roof trusses",
+        "Stone hearth in the center of the room",
+        "A gallery staircase against the left wall"
+      ],
+      "landmarks": [
+        "Three tall windows on the river side",
+        "A carved reed motif on the central hearth lintel"
+      ],
+      "identity_reference_ids": [],
+      "gm_only": false,
+      "gm_notes": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "hall-arrival",
+      "location_id": "ferry-hall",
+      "title": "Arrival at Reed Ferry Hall",
+      "kind": "location_reveal",
+      "intended_use": "Player location reveal shown before entering the hall",
+      "intent": "generate",
+      "moment": "The room rests between ferry arrivals; steam rises from cups near the hearth.",
+      "visible_changes": [],
+      "composition": {
+        "viewpoint": "Eye level from the open entrance",
+        "framing": "Wide interior with the nearest doorway edges partly visible",
+        "focal_point": "The stone hearth and its carved lintel",
+        "depth": "Wet threshold foreground, hearth and tables in the middle, pale river windows behind",
+        "visible_figures": [
+          "Two distant seated travelers with indistinct faces"
+        ]
+      },
+      "atmosphere": {
+        "time": "Rainy late afternoon",
+        "weather": "Rain visible beyond the windows",
+        "lighting": "Warm hearth light across the middle of the hall, cool daylight from the rear windows",
+        "mood": "Sheltered and quietly expectant"
+      },
+      "art_direction": {
+        "medium": "Gouache illustration",
+        "rendering": "Visible brush texture with restrained architectural detail",
+        "palette": [
+          "charcoal timber",
+          "river blue",
+          "warm ochre"
+        ]
+      },
+      "background": {
+        "mode": "opaque",
+        "description": "Complete interior fills the frame"
+      },
+      "output": {
+        "width_px": 1920,
+        "height_px": 1080,
+        "aspect_ratio": [
+          16,
+          9
+        ]
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "edit_scope": null,
+      "lettering": [],
+      "constraints": [
+        "Preserve all four roof trusses",
+        "The focal hearth must remain fully visible",
+        "No baked labels, grid, or interface elements"
+      ],
+      "gm_only": false
+    }
+  ],
+  "references": [],
+  "locks": [
+    "/locations/0/architecture",
+    "/locations/0/landmarks"
+  ],
+  "assumptions": [
+    "Original demonstration location; neither traveler has an established campaign identity."
+  ],
+  "gm_notes": [
+    "The ferry keeper secretly carries a sealed message. This is context only and must not appear in the player illustration."
+  ]
+}
