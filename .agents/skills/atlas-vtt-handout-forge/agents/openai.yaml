@@ -1,0 +1,4 @@
+interface:
+  display_name: "Atlas VTT Handout Forge"
+  short_description: "Illustrated clues with approved exact wording"
+  default_prompt: "Use $atlas-vtt-handout-forge to create an illustrated letter with the approved wording preserved exactly."

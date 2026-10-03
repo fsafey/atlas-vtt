@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "set_id": "discovered-document",
+  "revision": 1,
+  "locks": [],
+  "art_direction": "",
+  "references": [],
+  "gm_notes": "",
+  "documents": [
+    {
+      "asset_id": "letter-01",
+      "kind": "letter",
+      "gm_only": false,
+      "wording": {
+        "content": "",
+        "approval": "draft",
+        "basis": ""
+      },
+      "material": "",
+      "illustration": "No illustration specified yet; keep the text region blank.",
+      "typography": {
+        "family": "serif",
+        "font_px": 32,
+        "line_height": 1.4,
+        "ink": "#281d13"
+      },
+      "layout": {
+        "width_px": 1200,
+        "height_px": 1600,
+        "margin_px": 100,
+        "reserved_illustration_px": 240
+      },
+      "reference_ids": []
+    }
+  ]
+}

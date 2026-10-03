@@ -1,0 +1,452 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Heraldry authoring source, not native Atlas data",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "spec_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "locks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      },
+      "uniqueItems": true
+    },
+    "factions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "faction_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "identity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "motif": {
+                "type": "string"
+              },
+              "silhouette": {
+                "type": "string"
+              },
+              "arrangement": {
+                "type": "string"
+              },
+              "palette": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "distinctive_marks": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "constraints": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "motif",
+              "silhouette",
+              "arrangement",
+              "palette",
+              "distinctive_marks",
+              "constraints"
+            ]
+          },
+          "reference_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9_-]*$"
+            },
+            "uniqueItems": true
+          },
+          "emblem_reference_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9_-]*$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "consistency_anchor_asset_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9_-]*$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "gm_only": {
+            "type": "boolean"
+          },
+          "gm_notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "faction_id",
+          "name",
+          "identity",
+          "reference_ids",
+          "emblem_reference_id",
+          "consistency_anchor_asset_id",
+          "gm_only",
+          "gm_notes"
+        ]
+      },
+      "minItems": 1
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]*$"
+          },
+          "faction_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "intended_use": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "coat_of_arms",
+              "emblem",
+              "insignia",
+              "sigil",
+              "seal",
+              "banner",
+              "flag"
+            ]
+          },
+          "intent": {
+            "type": "string",
+            "enum": [
+              "generate",
+              "edit"
+            ]
+          },
+          "carrier": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "material": {
+                "type": "string"
+              },
+              "shape": {
+                "type": "string"
+              },
+              "viewpoint": {
+                "type": "string"
+              },
+              "orientation": {
+                "type": "string"
+              },
+              "composition": {
+                "type": "string"
+              },
+              "reading_size_px": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "material",
+              "shape",
+              "viewpoint",
+              "orientation",
+              "composition",
+              "reading_size_px"
+            ]
+          },
+          "background": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "unspecified",
+                  "solid",
+                  "transparent"
+                ]
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "mode",
+              "description"
+            ]
+          },
+          "output": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "width_px": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "height_px": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              },
+              "aspect_ratio": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                ]
+              }
+            },
+            "required": [
+              "width_px",
+              "height_px",
+              "aspect_ratio"
+            ]
+          },
+          "lettering": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "wording": {
+                "type": "string"
+              },
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "raster_verify",
+                  "compose_later"
+                ]
+              },
+              "placement": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "wording",
+              "mode",
+              "placement"
+            ]
+          },
+          "art_direction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "medium": {
+                "type": "string"
+              },
+              "rendering": {
+                "type": "string"
+              },
+              "lighting": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "medium",
+              "rendering",
+              "lighting"
+            ]
+          },
+          "reference_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9_-]*$"
+            },
+            "uniqueItems": true
+          },
+          "edit_target_ref": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9_-]*$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "constraints": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "gm_only": {
+            "type": "boolean"
+          },
+          "gm_notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "asset_id",
+          "faction_id",
+          "title",
+          "intended_use",
+          "kind",
+          "intent",
+          "carrier",
+          "background",
+          "output",
+          "lettering",
+          "art_direction",
+          "reference_ids",
+          "edit_target_ref",
+          "constraints",
+          "gm_only",
+          "gm_notes"
+        ]
+      },
+      "minItems": 1
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "reference_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]*$"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "emblem",
+              "style",
+              "material",
+              "edit_target"
+            ]
+          },
+          "inspection": {
+            "type": "string",
+            "enum": [
+              "uninspected",
+              "inspected",
+              "unavailable"
+            ]
+          },
+          "approval": {
+            "type": "string",
+            "enum": [
+              "not_requested",
+              "pending",
+              "user_approved",
+              "rejected"
+            ]
+          },
+          "use": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ignore": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "gm_only": {
+            "type": "boolean"
+          },
+          "gm_notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "reference_id",
+          "locator",
+          "role",
+          "inspection",
+          "approval",
+          "use",
+          "ignore",
+          "gm_only",
+          "gm_notes"
+        ]
+      },
+      "minItems": 0
+    },
+    "gm_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "spec_id",
+    "revision",
+    "locks",
+    "factions",
+    "assets",
+    "references",
+    "gm_notes"
+  ]
+}

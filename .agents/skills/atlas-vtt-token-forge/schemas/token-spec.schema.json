@@ -1,0 +1,519 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atlas VTT Token authoring source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "spec_id",
+    "revision",
+    "subjects",
+    "assets",
+    "references",
+    "locks",
+    "assumptions",
+    "gm_notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "spec_id": {
+      "$ref": "#/$defs/id"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "subjects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/subject"
+      }
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/asset"
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      }
+    },
+    "locks": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^/"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gm_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$",
+      "maxLength": 80
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "form",
+        "apparent_age",
+        "anatomy",
+        "face_head",
+        "coloring",
+        "distinctive_features",
+        "clothing",
+        "equipment"
+      ],
+      "properties": {
+        "form": {
+          "type": "string"
+        },
+        "apparent_age": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "anatomy": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "feature",
+              "count",
+              "details"
+            ],
+            "properties": {
+              "feature": {
+                "type": "string",
+                "minLength": 1
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "details": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "face_head": {
+          "type": "string"
+        },
+        "coloring": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "distinctive_features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "clothing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "equipment": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "medium",
+        "rendering",
+        "palette",
+        "lighting",
+        "mood"
+      ],
+      "properties": {
+        "medium": {
+          "type": "string"
+        },
+        "rendering": {
+          "type": "string"
+        },
+        "palette": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lighting": {
+          "type": "string"
+        },
+        "mood": {
+          "type": "string"
+        }
+      }
+    },
+    "origin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "portrait_asset_id",
+        "source_revision",
+        "source_sha256",
+        "approved_image_ref",
+        "approval_basis"
+      ],
+      "properties": {
+        "portrait_asset_id": {
+          "$ref": "#/$defs/id"
+        },
+        "source_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "source_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "approved_image_ref": {
+          "$ref": "#/$defs/id"
+        },
+        "approval_basis": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_id",
+        "name",
+        "visible_identity",
+        "identity_reference_ids",
+        "portrait_origin",
+        "gm_only",
+        "gm_notes"
+      ],
+      "properties": {
+        "subject_id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "visible_identity": {
+          "$ref": "#/$defs/identity"
+        },
+        "identity_reference_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "portrait_origin": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/origin"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "gm_only": {
+          "type": "boolean"
+        },
+        "gm_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference_id",
+        "locator",
+        "role",
+        "inspection",
+        "use",
+        "ignore",
+        "approved_identity",
+        "gm_only"
+      ],
+      "properties": {
+        "reference_id": {
+          "$ref": "#/$defs/id"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "identity",
+            "style",
+            "pose",
+            "clothing",
+            "edit_target",
+            "quality"
+          ]
+        },
+        "inspection": {
+          "enum": [
+            "uninspected",
+            "inspected",
+            "unavailable"
+          ]
+        },
+        "use": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ignore": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "approved_identity": {
+          "type": "boolean"
+        },
+        "gm_only": {
+          "type": "boolean"
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "asset_id",
+        "subject_id",
+        "title",
+        "intended_use",
+        "intent",
+        "kind",
+        "viewpoint",
+        "pose",
+        "background",
+        "border",
+        "composition",
+        "output",
+        "art_direction",
+        "reference_ids",
+        "edit_target_ref",
+        "constraints",
+        "gm_only"
+      ],
+      "properties": {
+        "asset_id": {
+          "$ref": "#/$defs/id"
+        },
+        "subject_id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string"
+        },
+        "intended_use": {
+          "type": "string"
+        },
+        "intent": {
+          "enum": [
+            "generate",
+            "edit"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "portrait_circle",
+            "top_down",
+            "creature_cutout"
+          ]
+        },
+        "viewpoint": {
+          "type": "string"
+        },
+        "pose": {
+          "type": "string"
+        },
+        "background": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode",
+            "description"
+          ],
+          "properties": {
+            "mode": {
+              "enum": [
+                "unspecified",
+                "solid",
+                "transparent"
+              ]
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        },
+        "border": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "mode",
+            "description"
+          ],
+          "properties": {
+            "mode": {
+              "enum": [
+                "atlas_ring",
+                "baked",
+                "none"
+              ]
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        },
+        "composition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "safe_margin_percent",
+            "important_features"
+          ],
+          "properties": {
+            "safe_margin_percent": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "minimum": 0,
+              "maximum": 40
+            },
+            "important_features": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "output": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "width_px",
+            "height_px",
+            "aspect_ratio",
+            "tabletop_sizes_px"
+          ],
+          "properties": {
+            "width_px": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "height_px": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1
+            },
+            "aspect_ratio": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "tabletop_sizes_px": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        },
+        "art_direction": {
+          "$ref": "#/$defs/style"
+        },
+        "reference_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "edit_target_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "gm_only": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

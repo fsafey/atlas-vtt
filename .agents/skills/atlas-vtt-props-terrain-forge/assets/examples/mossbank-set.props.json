@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0",
+  "spec_id": "mossbank-terrain",
+  "revision": 1,
+  "locks": [
+    "/assets/2/footprint",
+    "/assets/2/viewpoint",
+    "/assets/2/composition"
+  ],
+  "art_direction": {
+    "style": "Hand-painted fantasy terrain with readable bold shapes",
+    "palette": [
+      "moss green",
+      "slate gray",
+      "weathered brown",
+      "blue-gray shingles"
+    ],
+    "edge_treatment": "Clean semitransparent leaf edges without matte fringe",
+    "lighting": "Overhead diffuse light; matching short contact shadows"
+  },
+  "assumptions": [
+    "Separate cutouts in a coherent overhead terrain collection."
+  ],
+  "references": [],
+  "assets": [
+    {
+      "asset_id": "tree-01",
+      "object_id": "mossbank-oak",
+      "name": "Mossbank oak",
+      "kind": "vegetation",
+      "description": "Single broad oak canopy, asymmetrical three-lobed silhouette, sparse gaps revealing actual transparency. No ground patch.",
+      "materials": [
+        "leaves",
+        "bark"
+      ],
+      "viewpoint": "orthographic_top_down",
+      "orientation": "Long axis toward image top",
+      "footprint": {
+        "width": 15,
+        "length": 15,
+        "unit": "ft"
+      },
+      "composition": {
+        "whole_object": true,
+        "clear_margin_fraction": 0.06,
+        "base": "none",
+        "anchor": [
+          0.5,
+          0.5
+        ]
+      },
+      "shadow": {
+        "mode": "contact",
+        "direction_deg": null,
+        "reach_fraction": 0.03
+      },
+      "output": {
+        "width_px": 1024,
+        "height_px": 1024,
+        "background": "transparent",
+        "backdrop": "",
+        "preview_long_edge_px": 96
+      },
+      "reference_ids": [],
+      "gm_only": false
+    },
+    {
+      "asset_id": "rock-01",
+      "object_id": "mossbank-boulder",
+      "name": "Mossbank boulder",
+      "kind": "rock",
+      "description": "One angular granite boulder with a split upper face, small moss patches, and a clear irregular outer contour.",
+      "materials": [
+        "granite",
+        "moss"
+      ],
+      "viewpoint": "orthographic_top_down",
+      "orientation": "Long axis toward image top",
+      "footprint": {
+        "width": 5,
+        "length": 7,
+        "unit": "ft"
+      },
+      "composition": {
+        "whole_object": true,
+        "clear_margin_fraction": 0.06,
+        "base": "none",
+        "anchor": [
+          0.5,
+          0.5
+        ]
+      },
+      "shadow": {
+        "mode": "contact",
+        "direction_deg": null,
+        "reach_fraction": 0.03
+      },
+      "output": {
+        "width_px": 1024,
+        "height_px": 1024,
+        "background": "transparent",
+        "backdrop": "",
+        "preview_long_edge_px": 96
+      },
+      "reference_ids": [],
+      "gm_only": false
+    },
+    {
+      "asset_id": "roof-01",
+      "object_id": "mossbank-shed",
+      "name": "Mossbank shed roof",
+      "kind": "structure",
+      "description": "Standalone rectangular shed roof viewed directly overhead, blue-gray shingles, one ridge beam, no walls or interior floorplan.",
+      "materials": [
+        "shingles",
+        "wood"
+      ],
+      "viewpoint": "orthographic_top_down",
+      "orientation": "Long axis toward image top",
+      "footprint": {
+        "width": 10,
+        "length": 15,
+        "unit": "ft"
+      },
+      "composition": {
+        "whole_object": true,
+        "clear_margin_fraction": 0.06,
+        "base": "none",
+        "anchor": [
+          0.5,
+          0.5
+        ]
+      },
+      "shadow": {
+        "mode": "contact",
+        "direction_deg": null,
+        "reach_fraction": 0.03
+      },
+      "output": {
+        "width_px": 1024,
+        "height_px": 1024,
+        "background": "transparent",
+        "backdrop": "",
+        "preview_long_edge_px": 96
+      },
+      "reference_ids": [],
+      "gm_only": false
+    },
+    {
+      "asset_id": "wagon-01",
+      "object_id": "mossbank-wagon",
+      "name": "Mossbank wagon",
+      "kind": "vehicle",
+      "description": "Single empty four-wheel wooden wagon, towbar pointing to image top, all wheels and towbar within the frame.",
+      "materials": [
+        "wood",
+        "iron"
+      ],
+      "viewpoint": "orthographic_top_down",
+      "orientation": "Long axis toward image top",
+      "footprint": {
+        "width": 6,
+        "length": 12,
+        "unit": "ft"
+      },
+      "composition": {
+        "whole_object": true,
+        "clear_margin_fraction": 0.06,
+        "base": "none",
+        "anchor": [
+          0.5,
+          0.5
+        ]
+      },
+      "shadow": {
+        "mode": "contact",
+        "direction_deg": null,
+        "reach_fraction": 0.03
+      },
+      "output": {
+        "width_px": 1024,
+        "height_px": 1024,
+        "background": "transparent",
+        "backdrop": "",
+        "preview_long_edge_px": 96
+      },
+      "reference_ids": [],
+      "gm_only": false
+    },
+    {
+      "asset_id": "roof-secret-01",
+      "object_id": "mossbank-shed",
+      "name": "Mossbank shed roof",
+      "kind": "structure",
+      "description": "Private roof variant with a visible concealed hatch outline.",
+      "materials": [
+        "shingles",
+        "wood"
+      ],
+      "viewpoint": "orthographic_top_down",
+      "orientation": "Long axis toward image top",
+      "footprint": {
+        "width": 10,
+        "length": 15,
+        "unit": "ft"
+      },
+      "composition": {
+        "whole_object": true,
+        "clear_margin_fraction": 0.06,
+        "base": "none",
+        "anchor": [
+          0.5,
+          0.5
+        ]
+      },
+      "shadow": {
+        "mode": "contact",
+        "direction_deg": null,
+        "reach_fraction": 0.03
+      },
+      "output": {
+        "width_px": 1024,
+        "height_px": 1024,
+        "background": "transparent",
+        "backdrop": "",
+        "preview_long_edge_px": 96
+      },
+      "reference_ids": [],
+      "gm_only": true
+    }
+  ],
+  "gm_notes": [
+    "Only the private roof variant reveals the hidden access hatch."
+  ]
+}

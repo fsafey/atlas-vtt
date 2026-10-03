@@ -1,0 +1,4 @@
+interface:
+  display_name: "Atlas VTT Props & Terrain Forge"
+  short_description: "Make reusable map props and terrain cutouts"
+  default_prompt: "Use $atlas-vtt-props-terrain-forge to create a transparent top-down map prop with an editable brief and inspect the requested image."

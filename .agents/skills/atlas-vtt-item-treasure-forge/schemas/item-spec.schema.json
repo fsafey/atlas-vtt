@@ -1,0 +1,490 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "spec_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      },
+      "minItems": 1,
+      "uniqueItems": false
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/asset"
+      },
+      "minItems": 1,
+      "uniqueItems": false
+    },
+    "art_direction": {
+      "$ref": "#/$defs/art_direction"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference"
+      },
+      "minItems": 0,
+      "uniqueItems": false
+    },
+    "locks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^/.+"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 0,
+      "uniqueItems": false
+    },
+    "gm_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 0,
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "spec_id",
+    "revision",
+    "items",
+    "assets",
+    "art_direction",
+    "references",
+    "locks",
+    "assumptions",
+    "gm_notes"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:atlas-vtt-item-treasure-forge:item-spec:1",
+  "$defs": {
+    "appearance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "shape": {
+          "type": "string"
+        },
+        "proportions": {
+          "type": "string"
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        },
+        "colors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        },
+        "construction": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        },
+        "distinctive_marks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        },
+        "wear": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        }
+      },
+      "required": [
+        "shape",
+        "proportions",
+        "materials",
+        "colors",
+        "construction",
+        "distinctive_marks",
+        "wear"
+      ]
+    },
+    "inscription": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "inscription_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "text": {
+          "type": "string"
+        },
+        "placement": {
+          "type": "string"
+        },
+        "handling": {
+          "enum": [
+            "exact_composition",
+            "render_and_verify",
+            "decorative"
+          ]
+        }
+      },
+      "required": [
+        "inscription_id",
+        "text",
+        "placement",
+        "handling"
+      ]
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "weapon",
+            "equipment",
+            "consumable",
+            "valuable",
+            "artifact"
+          ]
+        },
+        "appearance": {
+          "$ref": "#/$defs/appearance"
+        },
+        "inscriptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/inscription"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        },
+        "gm_only": {
+          "type": "boolean"
+        },
+        "gm_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        }
+      },
+      "required": [
+        "item_id",
+        "name",
+        "kind",
+        "appearance",
+        "inscriptions",
+        "gm_only",
+        "gm_notes"
+      ]
+    },
+    "art_direction": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "medium": {
+          "type": "string"
+        },
+        "rendering": {
+          "type": "string"
+        },
+        "palette": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        },
+        "lighting": {
+          "type": "string"
+        },
+        "mood": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "medium",
+        "rendering",
+        "palette",
+        "lighting",
+        "mood"
+      ]
+    },
+    "background": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "unspecified",
+            "solid",
+            "environment",
+            "transparent"
+          ]
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "mode",
+        "description"
+      ]
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "width_px": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "height_px": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "aspect_ratio": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "width_px",
+        "height_px",
+        "aspect_ratio"
+      ]
+    },
+    "presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "viewpoint": {
+          "type": "string"
+        },
+        "arrangement": {
+          "type": "string"
+        },
+        "framing": {
+          "type": "string"
+        },
+        "background": {
+          "$ref": "#/$defs/background"
+        },
+        "output": {
+          "$ref": "#/$defs/output"
+        }
+      },
+      "required": [
+        "viewpoint",
+        "arrangement",
+        "framing",
+        "background",
+        "output"
+      ]
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "asset_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "title": {
+          "type": "string"
+        },
+        "item_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "intent": {
+          "enum": [
+            "generate",
+            "edit"
+          ]
+        },
+        "presentation": {
+          "$ref": "#/$defs/presentation"
+        },
+        "reference_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "edit_target_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9_-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        },
+        "gm_only": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "asset_id",
+        "title",
+        "item_ids",
+        "intent",
+        "presentation",
+        "reference_ids",
+        "edit_target_ref",
+        "constraints",
+        "gm_only"
+      ]
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reference_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]*$"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "identity",
+            "style",
+            "material",
+            "composition",
+            "edit_target"
+          ]
+        },
+        "inspection": {
+          "enum": [
+            "inspected",
+            "uninspected",
+            "unavailable"
+          ]
+        },
+        "use": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        },
+        "ignore": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": false
+        },
+        "gm_only": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "reference_id",
+        "locator",
+        "role",
+        "inspection",
+        "use",
+        "ignore",
+        "gm_only"
+      ]
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "spec_id": "marsh-gryphon-token-study",
+  "revision": 1,
+  "subjects": [
+    {
+      "subject_id": "marsh-gryphon",
+      "name": "Marsh gryphon",
+      "visible_identity": {
+        "form": "Original six-limbed marsh gryphon",
+        "apparent_age": "Mature adult",
+        "anatomy": [
+          {
+            "feature": "legs",
+            "count": 4,
+            "details": "Four feline legs with broad paws; wings are separate appendages"
+          },
+          {
+            "feature": "wings",
+            "count": 2,
+            "details": "A separate feathered pair attached above the forelegs"
+          },
+          {
+            "feature": "tails",
+            "count": 1,
+            "details": "Long feline tail with a reed-colored feather tuft"
+          },
+          {
+            "feature": "horns",
+            "count": 0,
+            "details": "No horns"
+          }
+        ],
+        "face_head": "Broad raptor beak, amber eyes, and a swept-back feather crest",
+        "coloring": [
+          "Slate blue dorsal feathers",
+          "Cream chest feathers",
+          "Deep brown feline hindquarters",
+          "Amber eyes"
+        ],
+        "distinctive_features": [
+          "A single cream crescent patch below the left eye"
+        ],
+        "clothing": [],
+        "equipment": []
+      },
+      "identity_reference_ids": [],
+      "gm_only": false,
+      "gm_notes": [],
+      "portrait_origin": null
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "marsh-gryphon-cutout",
+      "subject_id": "marsh-gryphon",
+      "title": "Marsh gryphon tabletop cutout",
+      "intended_use": "Whole creature artwork used as a movable unframed token",
+      "intent": "generate",
+      "kind": "creature_cutout",
+      "viewpoint": "Three-quarter whole-body view",
+      "pose": "Standing with both wings partly spread, all feet grounded and visible",
+      "background": {
+        "mode": "transparent",
+        "description": "Clean alpha cutout around the entire creature; no environment or ground shadow"
+      },
+      "border": {
+        "mode": "none",
+        "description": "Whole artwork with Atlas ring off"
+      },
+      "composition": {
+        "safe_margin_percent": 6,
+        "important_features": [
+          "All requested legs, wings, head, and tail fully in frame",
+          "Beak and wing silhouette remain recognizable at 128 pixels"
+        ]
+      },
+      "output": {
+        "width_px": 1536,
+        "height_px": 1024,
+        "aspect_ratio": [
+          3,
+          2
+        ],
+        "tabletop_sizes_px": [
+          128
+        ]
+      },
+      "art_direction": {
+        "medium": "Fantasy natural-history illustration",
+        "rendering": "Painterly feather and fur detail with crisp silhouette",
+        "palette": [
+          "Slate blue",
+          "Cream",
+          "Deep brown",
+          "Amber"
+        ],
+        "lighting": "Soft neutral studio light",
+        "mood": "Believable wild animal rather than threatening monster"
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [
+        "No ground disc, token border, labels, or scenery",
+        "Retain the written anatomy counts exactly"
+      ],
+      "gm_only": false
+    }
+  ],
+  "references": [],
+  "locks": [
+    "/subjects/0/visible_identity/anatomy"
+  ],
+  "assumptions": [
+    "Original written demonstration from Portrait Forge; no creature image or identity reference is supplied or claimed inspected"
+  ],
+  "gm_notes": []
+}

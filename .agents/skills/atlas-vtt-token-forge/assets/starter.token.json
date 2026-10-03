@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "spec_id": "token-study",
+  "revision": 1,
+  "subjects": [
+    {
+      "subject_id": "subject-01",
+      "name": "",
+      "visible_identity": {
+        "form": "",
+        "apparent_age": null,
+        "anatomy": [],
+        "face_head": "",
+        "coloring": [],
+        "distinctive_features": [],
+        "clothing": [],
+        "equipment": []
+      },
+      "identity_reference_ids": [],
+      "portrait_origin": null,
+      "gm_only": false,
+      "gm_notes": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "token-01",
+      "subject_id": "subject-01",
+      "title": "",
+      "intended_use": "",
+      "intent": "generate",
+      "kind": "portrait_circle",
+      "viewpoint": "",
+      "pose": "",
+      "background": {
+        "mode": "unspecified",
+        "description": ""
+      },
+      "border": {
+        "mode": "atlas_ring",
+        "description": "Use the native Atlas ring; do not paint a border into the artwork"
+      },
+      "composition": {
+        "safe_margin_percent": null,
+        "important_features": []
+      },
+      "output": {
+        "width_px": null,
+        "height_px": null,
+        "aspect_ratio": [
+          1,
+          1
+        ],
+        "tabletop_sizes_px": [
+          64,
+          128
+        ]
+      },
+      "art_direction": {
+        "medium": "",
+        "rendering": "",
+        "palette": [],
+        "lighting": "",
+        "mood": ""
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [],
+      "gm_only": false
+    }
+  ],
+  "references": [],
+  "locks": [],
+  "assumptions": [],
+  "gm_notes": []
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Atlas VTT Token Forge"
+  short_description: "Portrait tokens, top-down figures, and creature cutouts"
+  default_prompt: "Use $atlas-vtt-token-forge to make a recognizable tabletop token, preserve its approved identity in an editable specification, and render and inspect the requested image."
+policy:
+  allow_implicit_invocation: true

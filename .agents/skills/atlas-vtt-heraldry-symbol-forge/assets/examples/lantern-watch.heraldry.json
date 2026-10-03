@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "spec_id": "lantern-watch-identity",
+  "revision": 1,
+  "locks": [
+    "/factions/0/identity/motif",
+    "/factions/0/identity/palette"
+  ],
+  "factions": [
+    {
+      "faction_id": "lantern-watch",
+      "name": "Lantern Watch",
+      "identity": {
+        "motif": "One hooded lantern above a single open arch",
+        "silhouette": "Tall rounded lantern hood nested above a broad arch; a clear gap separates the two",
+        "arrangement": "Lantern centered over arch, no shield or surrounding crest",
+        "palette": [
+          "Deep indigo field",
+          "Warm ivory arch",
+          "Muted gold lantern and flame"
+        ],
+        "distinctive_marks": [
+          "The lantern has three broad vertical window openings"
+        ],
+        "constraints": [
+          "Exactly one lantern and one open arch",
+          "No human figure, crown, wings, or extra flame"
+        ]
+      },
+      "reference_ids": [],
+      "emblem_reference_id": null,
+      "consistency_anchor_asset_id": null,
+      "gm_only": false,
+      "gm_notes": ""
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "watch-emblem",
+      "faction_id": "lantern-watch",
+      "title": "Lantern Watch emblem",
+      "intended_use": "Player-facing faction reference and small inventory marker",
+      "kind": "emblem",
+      "intent": "generate",
+      "carrier": {
+        "material": "Flat painted graphic",
+        "shape": "Free-standing emblem without shield",
+        "viewpoint": "front-facing",
+        "orientation": "upright",
+        "composition": "centered, complete edges visible",
+        "reading_size_px": 64
+      },
+      "background": {
+        "mode": "transparent",
+        "description": "Clean silhouette with transparent negative space"
+      },
+      "output": {
+        "width_px": 1024,
+        "height_px": 1024,
+        "aspect_ratio": [
+          1,
+          1
+        ]
+      },
+      "lettering": {
+        "wording": "",
+        "mode": "none",
+        "placement": ""
+      },
+      "art_direction": {
+        "medium": "Hand-drawn fantasy insignia",
+        "rendering": "Bold clean contours, restrained shading",
+        "lighting": "Even graphic lighting"
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "constraints": [],
+      "gm_only": false,
+      "gm_notes": ""
+    }
+  ],
+  "references": [],
+  "gm_notes": ""
+}

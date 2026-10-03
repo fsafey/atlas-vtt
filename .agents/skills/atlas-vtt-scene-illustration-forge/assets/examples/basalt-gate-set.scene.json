@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "spec_id": "basalt-gate-reveals",
+  "revision": 1,
+  "locations": [
+    {
+      "location_id": "basalt-gate",
+      "name": "Basalt Gate",
+      "description": "A black basalt watch-gate spans a narrow valley above a white-water river, joining two squat towers with a single stone arch.",
+      "architecture": [
+        "Two squat square basalt towers joined by one stone arch",
+        "An eastern buttress rests on the valley slope",
+        "A narrow bridge approach rises from the viewer side"
+      ],
+      "landmarks": [
+        "Pale river below the arch",
+        "A single bronze bell in the left tower",
+        "A split mountain crest in the distance"
+      ],
+      "identity_reference_ids": [],
+      "gm_only": false,
+      "gm_notes": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "gate-dawn",
+      "location_id": "basalt-gate",
+      "title": "Basalt Gate at Dawn",
+      "kind": "location_reveal",
+      "intended_use": "Player scenic location reveal",
+      "intent": "generate",
+      "moment": "The first sunlight touches the upper arch.",
+      "visible_changes": [],
+      "composition": {
+        "viewpoint": "Elevated three-quarter view from the western approach",
+        "framing": "Wide landscape, complete towers and arch inside the frame",
+        "focal_point": "The stone arch between the towers",
+        "depth": "Grasses along the near approach, the gate in the middle, split mountain crest in the distance",
+        "visible_figures": []
+      },
+      "atmosphere": {
+        "time": "Dawn",
+        "weather": "Clear air with faint valley mist",
+        "lighting": "Low warm sunlight from the right with cool valley shadows",
+        "mood": "Quiet anticipation"
+      },
+      "art_direction": {
+        "medium": "Ink and watercolor",
+        "rendering": "Fine architectural ink contours with broad atmospheric washes",
+        "palette": [
+          "basalt charcoal",
+          "mist gray",
+          "faded gold"
+        ]
+      },
+      "background": {
+        "mode": "opaque",
+        "description": "Valley, river, sky, and distant mountain occupy the full frame"
+      },
+      "output": {
+        "width_px": 1920,
+        "height_px": 1080,
+        "aspect_ratio": [
+          16,
+          9
+        ]
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "edit_scope": null,
+      "lettering": [],
+      "constraints": [
+        "Exactly two towers and one connecting arch",
+        "The bronze bell remains in the left tower",
+        "No grid, text, border, or interface"
+      ],
+      "gm_only": false
+    },
+    {
+      "asset_id": "gate-evening",
+      "location_id": "basalt-gate",
+      "title": "Basalt Gate at Evening",
+      "kind": "location_reveal",
+      "intended_use": "Player scenic location reveal",
+      "intent": "generate",
+      "moment": "The bronze bell catches the last light.",
+      "visible_changes": [],
+      "composition": {
+        "viewpoint": "Elevated three-quarter view from the western approach",
+        "framing": "Wide landscape, complete towers and arch inside the frame",
+        "focal_point": "The stone arch between the towers",
+        "depth": "Grasses along the near approach, the gate in the middle, split mountain crest in the distance",
+        "visible_figures": []
+      },
+      "atmosphere": {
+        "time": "Evening",
+        "weather": "Clear sky with a thin veil of river mist",
+        "lighting": "Cool blue twilight with a small amber lamp at the gate threshold",
+        "mood": "Still and watchful"
+      },
+      "art_direction": {
+        "medium": "Ink and watercolor",
+        "rendering": "Fine architectural ink contours with broad atmospheric washes",
+        "palette": [
+          "basalt charcoal",
+          "mist gray",
+          "faded gold"
+        ]
+      },
+      "background": {
+        "mode": "opaque",
+        "description": "Valley, river, sky, and distant mountain occupy the full frame"
+      },
+      "output": {
+        "width_px": 1920,
+        "height_px": 1080,
+        "aspect_ratio": [
+          16,
+          9
+        ]
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "edit_scope": null,
+      "lettering": [],
+      "constraints": [
+        "Exactly two towers and one connecting arch",
+        "The bronze bell remains in the left tower",
+        "No grid, text, border, or interface"
+      ],
+      "gm_only": false
+    },
+    {
+      "asset_id": "gate-private-siege",
+      "location_id": "basalt-gate",
+      "title": "The Broken Gate",
+      "kind": "dramatic_scene",
+      "intended_use": "Private GM illustration of a later event",
+      "intent": "generate",
+      "moment": "A burst of orange light throws rubble outward from the eastern buttress as two distant riders flee along the approach.",
+      "visible_changes": [
+        "The eastern buttress has a fresh breach but both towers and the main arch still stand"
+      ],
+      "composition": {
+        "viewpoint": "Elevated three-quarter view from the western approach",
+        "framing": "Wide landscape, complete towers and arch inside the frame",
+        "focal_point": "The bursting eastern buttress beneath the still-standing arch",
+        "depth": "Grasses along the near approach, the gate in the middle, split mountain crest in the distance",
+        "visible_figures": [
+          "Two distant mounted figures escaping toward the foreground"
+        ]
+      },
+      "atmosphere": {
+        "time": "Night",
+        "weather": "Wind drives river spray across the near approach",
+        "lighting": "Orange blast light near the eastern buttress against cold moonlight",
+        "mood": "Sudden danger"
+      },
+      "art_direction": {
+        "medium": "Ink and watercolor",
+        "rendering": "Fine architectural ink contours with broad atmospheric washes",
+        "palette": [
+          "basalt charcoal",
+          "mist gray",
+          "faded gold"
+        ]
+      },
+      "background": {
+        "mode": "opaque",
+        "description": "Valley, river, sky, and distant mountain occupy the full frame"
+      },
+      "output": {
+        "width_px": 1920,
+        "height_px": 1080,
+        "aspect_ratio": [
+          16,
+          9
+        ]
+      },
+      "reference_ids": [],
+      "edit_target_ref": null,
+      "edit_scope": null,
+      "lettering": [],
+      "constraints": [
+        "Exactly two towers and one connecting arch",
+        "The bronze bell remains in the left tower",
+        "No grid, text, border, or interface"
+      ],
+      "gm_only": true
+    }
+  ],
+  "references": [],
+  "locks": [
+    "/locations/0/architecture",
+    "/locations/0/landmarks",
+    "/assets/0/composition",
+    "/assets/1/composition"
+  ],
+  "assumptions": [],
+  "gm_notes": [
+    "A future siege is private until the campaign reaches that event."
+  ]
+}

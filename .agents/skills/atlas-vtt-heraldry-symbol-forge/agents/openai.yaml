@@ -1,0 +1,4 @@
+interface:
+  display_name: "Atlas VTT Heraldry & Symbol Forge"
+  short_description: "Create consistent faction emblems, seals, and flags"
+  default_prompt: "Use $atlas-vtt-heraldry-symbol-forge to create a faction emblem and matching banner while preserving their shared identity."

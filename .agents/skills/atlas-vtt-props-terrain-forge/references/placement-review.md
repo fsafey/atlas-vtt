@@ -1,0 +1,13 @@
+# Composition and placement review
+
+Prefer a viewpoint matching the destination map. Orthographic top-down furniture should show its usable top silhouette without a camera horizon or side-wall perspective. Trees need recognizable canopy shape, with a trunk/ground anchor where relevant. Roofs need their roof outline, not an invented playable interior. Vehicles need every wheel, mast, and protrusion in frame. Intentional clusters should remain one coherent piece.
+
+The requested `clear_margin_fraction` applies to all four outer edges and includes shadows and tiny nonzero-alpha fragments. It describes clear canvas, not object scale. An asset with 20 percent padding occupies less screen space at the same raster size than one with 5 percent padding. Compare intended footprint against the visible object rather than the image rectangle. The helper's occupancy box includes shadows; it is not a semantic ground footprint or collision shape.
+
+Use top-left origin for normalized anchor coordinates, increasing x rightward and y downward. A center anchor `[0.5,0.5]` is useful for free rotation. A side-view piece can need a ground-contact anchor near the lower edge. Inspect the actual contact point after rendering. Padding asymmetry or a shadow can shift the visible center even when the declared anchor stays fixed.
+
+Check actual transparency using the raster alpha channel. Fully opaque RGBA has no transparent pixels; an entirely transparent image has no usable object. Fractional-alpha edges can be intentional antialiasing or shadows, but can also create halos. A painted checkerboard or uniform white matte is artwork. Look over light and dark backgrounds, inspect gaps within foliage/wheels/chairs, and verify no stray isolated pixels or crop cuts. Do not call metadata inspection a visual cutout review.
+
+At the recorded preview size, confirm the object is recognizable and its outer shape distinct. For sets, compare viewpoint, palette, line/texture density, material scale, clear padding, and shadow direction. Do not claim consistency from matching prompts. For edits, compare the approved base with the result and record drift in unchanged geometry, material, padding, anchor, or transparency.
+
+Record independent states: `brief: incomplete|ready`; `image: not_generated|generated|reviewed`; `approval: pending|user_approved|rejected`; `atlas_import: not_imported|imported`; `placement: not_checked|verified`; `tabletop: not_checked|accepted`. Leave actual values null until measured. A metadata pass, a user's art approval, native import, and successful tabletop use are different evidence.
