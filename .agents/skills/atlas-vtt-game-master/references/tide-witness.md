@@ -33,6 +33,8 @@ Paths below are relative to the active vault.
 
 Operator integration details are at `<source pack>/statblock-integration.json`. Consult for recovery or a relevant tool issue; it does not override Session State as the story record.
 
+Live Strain and Kit are on the placed hero's DM card; live party Delay is the scene counter labeled `Delay`. Update that counter when Delay is earned and copy the confirmed value into Session State at a checkpoint. If a counter change is unapplied or uncertain, record the earned Delay and mutation status separately; do not erase a confirmed fictional cost because the UI is stale or apply it twice.
+
 ## Assets and recovery
 
 Public files live in `Tide Witness/player/`, including `commission.exact.txt` and six approved illustrations linked by the runbook. Root `player/` also contains previously exercised copies. Follow the actual runbook locator and inspect the selected file rather than treating identical basenames as interchangeable.

@@ -16,6 +16,7 @@ Inspect Obsidian's current window titles and select the campaign vault. Obtain f
 | GM notes/cards | Tab with canvas focus opens DM Dashboard | Focus matters; Locate actor also closes dashboard. |
 | Actor context | DM Dashboard > Locate named actor, then right-click at that actor | AX canvas-container right-click worked at its center when XY failed. Confirm actor identity after layout changes or overlaps. |
 | Resources | Placed actor's DM card | Do not infer changes to other actors or note defaults. |
+| Party Delay | Scene counter labeled Delay | Party-wide cost; verify the counter and checkpoint the confirmed value. |
 | Hide/show/edit | Identified actor's context menu | Check intended actor; verify player visibility when material. |
 | Fit map | Shift+1 with canvas focus | Camera change is not travel or token movement. |
 | Player map | Atlas palette > Send Current Map to Player View | An old held frame does not prove a live connection. |
