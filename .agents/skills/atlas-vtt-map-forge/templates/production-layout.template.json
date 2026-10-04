@@ -1,0 +1,147 @@
+{
+  "contract": "atlas-map-production-sidecar/1",
+  "record_status": "template_incomplete",
+  "audience": "gm_private_master",
+  "note": "Illustrative coordinates only. Replace source bindings and record actual evidence before assembly. Paths resolve relative to this sidecar. No existing forge compiler validates this format.",
+  "layout_id": "neighborhood-layout",
+  "layout_revision": 1,
+  "source": {
+    "format": "project_owned_layout",
+    "owner": "atlas-vtt-map-forge",
+    "path": null,
+    "revision": null,
+    "sha256": null,
+    "hash_convention": "file_bytes"
+  },
+  "frames": {
+    "ground": {
+      "id": "local-ground",
+      "units": "m",
+      "origin": "northwest corner of authored neighborhood",
+      "axes": "x east, y south",
+      "crs": null,
+      "bounds_xywh": [0, 0, 240, 180]
+    },
+    "board": {
+      "id": "production-board",
+      "units": "px",
+      "origin": "upper_left",
+      "axes": "x right, y down",
+      "dimensions": [2400, 1800],
+      "ground_to_board_affine": [10, 0, 0, 10, 0, 0],
+      "coordination_grid_spacing": [100, 100],
+      "gameplay_grid": "defined separately in map source"
+    }
+  },
+  "style_set": {
+    "id": "neighborhood-style-01",
+    "camera": "orthographic_top_down",
+    "palette_materials": ["weathered timber", "blue-gray shingles"],
+    "lighting": "diffuse overhead light",
+    "scale_convention": "ground dimensions preserved; no pictorial enlargement proposed",
+    "preview_board_long_edges_px": [1200, 2400]
+  },
+  "pilot": {
+    "slot_ids": [],
+    "selection_reason": null,
+    "status": "not_selected"
+  },
+  "slots": [{
+    "slot_id": "plot-01",
+    "source_entity_id": "shed-01",
+    "district_id": "riverside",
+    "visibility": "public",
+    "ground_frame_id": "local-ground",
+    "ground_footprint": {
+      "outer_ring": [[100, 100], [110, 100], [110, 115], [100, 115], [100, 100]],
+      "void_rings": []
+    },
+    "ground_anchor": [105, 107.5],
+    "entrances": [{"id": "shed-south", "point": [105, 115]}],
+    "access_and_terrain": "Keep the south approach open on level ground.",
+    "expected_architecture": {
+      "shape": "rectangle",
+      "signature": "single ridge, no chimney or courtyard",
+      "entrance_orientation": "south"
+    },
+    "reference_cards": [{
+      "card_id": "roof-style-card",
+      "pin_ground": [105, 107.5],
+      "reference_id": "roof-style-reference",
+      "visibility": "gm_only",
+      "role": "style",
+      "path": null,
+      "inspection": "uninspected",
+      "use": ["shingle scale and palette"],
+      "ignore": ["background and neighboring structures"],
+      "approval": "pending"
+    }],
+    "candidate_asset_ids": ["shed-roof-candidate-01"]
+  }],
+  "components": [{
+    "asset_id": "shed-roof-candidate-01",
+    "object_id": "shed-roof",
+    "asset_version": 1,
+    "owner": "atlas-vtt-props-terrain-forge",
+    "props_source": {"path": null, "spec_id": null, "revision": null, "sha256": null, "hash_convention": "file_bytes"},
+    "requested": {
+      "composition_anchor": [0.5, 0.5],
+      "anchor_meaning": "center of ground footprint",
+      "shadow": {"mode": "contact", "direction_deg": null, "reach_fraction": 0.03}
+    },
+    "observed": {
+      "image_path": null,
+      "image_sha256_file_bytes": null,
+      "dimensions_px": null,
+      "anchor_normalized": null,
+      "anchor_alignment": null,
+      "alpha_bounds_xyxy": null,
+      "clear_margins_px": null,
+      "alpha_and_visual_review_record_path": null
+    },
+    "review": {"status": "not_run", "findings": [], "evidence_paths": []},
+    "selection": {"status": "proposed", "selected_by": null, "authority": null, "criteria_and_scope": null},
+    "user_approval": {"status": "pending", "evidence": null}
+  }],
+  "placements": [{
+    "slot_id": "plot-01",
+    "asset_id": "shed-roof-candidate-01",
+    "asset_version": 1,
+    "board_frame_id": "production-board",
+    "board_anchor_px": [1050, 1075],
+    "registration": {
+      "required": null,
+      "tolerance_board_px": null,
+      "observed_ground_anchor_board_px": null,
+      "deviation_board_px": null,
+      "status": "not_checked"
+    },
+    "scale_board_px_per_asset_px": null,
+    "rotation_deg_clockwise": 0,
+    "layer_order": 10,
+    "shadow_policy": "baked contact shadow, included in component alpha and change region",
+    "change_region_xywh": [975, 950, 150, 250],
+    "change_region_status": "proposed_including_shadow; verify against actual transformed alpha",
+    "affected_neighbor_ids": [],
+    "affected_access_ids": ["shed-south"],
+    "conserved_region": "outside the recorded change region",
+    "status": "proposed"
+  }],
+  "assembly": {
+    "base_composition": {"path": null, "revision": null, "image_sha256_file_bytes": null},
+    "status": "not_run",
+    "output_path": null,
+    "output_dimensions_px": null,
+    "output_sha256_file_bytes": null,
+    "editor_document_path": null
+  },
+  "review_gates": {
+    "shape_identity": "not_run",
+    "placement_access": "not_run",
+    "composition_seams_shadows": "not_run",
+    "display_size": "not_run",
+    "player_disclosure": "not_run",
+    "source_integrity": "not_run",
+    "native_setup": "not_run"
+  }
+}

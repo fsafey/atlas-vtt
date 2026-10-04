@@ -1,6 +1,6 @@
 ---
 name: atlas-vtt-props-terrain-forge
-description: "Create and revise fantasy map props and terrain cutouts for Atlas VTT: furniture, trees, rocks, obstacles, standalone structures, and vehicles. Turn ideas, inspected references, or JSON into editable specifications and requested images with suitable viewpoint, scale, anchors, and verified transparency. Use for individual map objects, coherent asset sets, and narrow prop edits. Playable maps, location reveal illustrations, creature tokens, and loot closeups have separate forges."
+description: "Create and revise fantasy map props and terrain cutouts for Atlas VTT: furniture, vegetation, obstacles, vehicles and reusable building exteriors or roofs. Turn ideas, inspected references or JSON into editable specifications and requested images with viewpoint, scale, anchor and transparency evidence. Use for individual map objects, coherent component sets and narrow edits. Map layout and production sprints belong to Map Forge; playable floorplans, scene reveals, tokens and loot closeups have separate owners."
 ---
 
 # Atlas VTT Props & Terrain Forge
@@ -20,6 +20,7 @@ Save project artifacts in the requested destination or workspace. Preserve prior
 - Read [references/data-contract.md](references/data-contract.md) for a complete source, set, disclosure filtering, or revision. Start sparse work from [assets/starter.props.json](assets/starter.props.json).
 - Consult [assets/examples/waystation-table.props.json](assets/examples/waystation-table.props.json) for one furniture cutout, [assets/examples/mossbank-set.props.json](assets/examples/mossbank-set.props.json) for a coordinated terrain set, or [assets/examples/roof-color.change.json](assets/examples/roof-color.change.json) for a narrow source revision.
 - Read [references/placement-review.md](references/placement-review.md) when composing or inspecting an image. Use [assets/review-record.json](assets/review-record.json) to record actual evidence separately from requested values.
+- For reusable building exteriors, roofs or components destined for a composed map, read [references/building-components.md](references/building-components.md). The shared [production layout template](../atlas-vtt-map-forge/templates/production-layout.template.json) records the Map Forge handoff separately from `props_spec`; it is optional for ordinary props.
 - Read [references/atlas-vtt.md](references/atlas-vtt.md) for Atlas compatibility or placement questions and refresh its source snapshot before current claims.
 - Load current `imagegen` instructions only when generation or editing is requested. Its live tool contract governs image inputs and controls.
 
@@ -30,6 +31,8 @@ Use known answers and resolve only missing choices that materially change the re
 Default to an isolated orthographic top-down cutout for a top-down map. Use isometric, side, or custom viewpoints when the destination calls for them. State orientation relative to image top and define a normalized placement anchor. An anchor is a placement instruction, not a native Atlas parameter. Keep footprint in world units separate from requested raster dimensions, object occupancy, and transparent padding.
 
 Keep the whole silhouette, overhanging foliage, wheels, handles, and approved shadow inside the frame. Define clear margin on all four edges as a fraction of the full canvas. Center an ordinary reusable piece; use an offset ground-contact anchor only when the destination needs it. Avoid scenic ground patches, extra objects, labels, borders, and baked grids unless requested. A visible base or cluster must be intentional.
+
+For building pieces, distinguish the ground footprint and anchor from the projected facade/roof silhouette and from alpha occupancy, which also includes shadows. A readable enlarged roof does not enlarge the geographic plot. Confirm the destination's camera and display scale before making a reusable set; one piece cannot be rotated freely if that changes its pictorial viewpoint or baked light direction.
 
 Make shadows reusable: none or a short contact shadow works for freely rotated pieces. For cast shadows, state direction clockwise from image top and maximum reach relative to the object. A baked cast shadow rotates with the object and cannot automatically match the map's world lighting. Include the shadow in the cutout and padding checks.
 
