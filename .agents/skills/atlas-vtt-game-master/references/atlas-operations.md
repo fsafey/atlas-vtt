@@ -15,8 +15,8 @@ Inspect Obsidian's current window titles and select the campaign vault. Obtain f
 | Reopen scene | Atlas dashboard > Continue your adventure, or Asset Manager identified scene | Preserve existing scene rather than recreating it. |
 | GM notes/cards | Tab with canvas focus opens DM Dashboard | Focus matters; Locate actor also closes dashboard. |
 | Actor context | DM Dashboard > Locate named actor, then right-click at that actor | AX canvas-container right-click worked at its center when XY failed. Confirm actor identity after layout changes or overlaps. |
-| Resources | Placed actor's DM card | Do not infer changes to other actors or note defaults. |
-| Party Delay | Scene counter labeled Delay | Party-wide cost; verify the counter and checkpoint the confirmed value. |
+| Resources | Designated owner actor's DM card, per campaign profile | Scene copies/defaults are not synchronized live owners. |
+| Party Delay | Counter labeled Delay in the designated owner scene | Party-wide cost; verify the counter and checkpoint the confirmed value. |
 | Hide/show/edit | Identified actor's context menu | Check intended actor; verify player visibility when material. |
 | Fit map | Shift+1 with canvas focus | Camera change is not travel or token movement. |
 | Player map | Atlas palette > Send Current Map to Player View | An old held frame does not prove a live connection. |
