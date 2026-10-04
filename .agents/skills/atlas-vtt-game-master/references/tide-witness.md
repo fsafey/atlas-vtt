@@ -21,6 +21,8 @@ Paths below are relative to the active vault.
 | `Tide Witness/Play Agreement.md` | Enter/resume | Current authority, tone, dice method, learning style. |
 | `Tide Witness/Rules.md` | Enter/resume and adjudicate | Authoritative d6 procedure and reward terms. |
 | `Tide Witness/Session State.md` | Every resume/checkpoint | Active party, real events, resources, pending decision. |
+| `Tide Witness/World and Map Conventions.md` | Enter/resume or interpret positions | Campaign spatial meaning, map hierarchy and party representation. |
+| `Tide Witness/Locations/Alderhaven.md`, `Tide Witness/Locations/Alderhaven/Registrar's Office.md` | Current opening; develop a place | Maintained public location hubs and actual asset readiness. |
 | `Tide Witness/Heroes/<active hero>.md` | Resume or check gear | Established specialties, equipment, motives, connections. Select names from Session State. |
 | `Tide Witness/Player Brief.md`, `Tide Witness/Party.md` | Choose heroes/public context | Prepared options; no requirement to assign unselected heroes. |
 | `Tide Witness/GM Runbook.md` | Locate current beat | Preparation and reveal links; timings are guidance. |
