@@ -36,13 +36,13 @@ Identify the acting hero, objective, and approach. Resolve safe, sensible action
 
 Follow the campaign's essential-clue and recovery rules. Reading GM notes does not reveal them to heroes. Keep future information out of narration and public handouts unless the user explicitly asks to inspect preparation out of character.
 
-## Develop locations and choose map detail
-
-Read [worldbuilding and map scales](references/worldbuilding.md) when expanding a location, deciding whether play needs a new asset, or interpreting token positions. Apply the campaign's spatial conventions: a regional marker represents an area, not a person's position inside a room. Develop playable detail from established facts and player choices; preserve it in the appropriate location notes without treating preparation as completed events.
-
 ### Tide Witness check example
 
 Read Rules for the full procedure. The following illustrates the calculation, not a fictional roll: a die of 2, relevant specialty +1, and useful helper +1 gives 4. Standard target 4 succeeds. A helper and Kit occupy the same second bonus slot; both cannot stack. Before-roll bonuses cap at +2. Only the optional push can add +1 after the die, costing one Strain when allowed. Ask the player about that push; never take it automatically.
+
+## Develop locations and choose map detail
+
+Read [worldbuilding and map scales](references/worldbuilding.md) when expanding a location, deciding whether play needs a new asset, or interpreting token positions. Apply the campaign's spatial conventions: a regional marker represents an area, not a person's position inside a room. Develop playable detail from established facts and player choices; preserve it in the appropriate location notes without treating preparation as completed events.
 
 ## Operate and record
 
@@ -60,6 +60,6 @@ Update ordinary campaign notes with actual consequential events. At a pause/end,
 - Confirmed live resources/Delay (or campaign equivalents), recorded time, and any discrepancy or unapplied UI change.
 - A current native snapshot locator if one was created, retaining its actual name and verification limits.
 
-Placed token controls own live resources. Session State is a manual checkpoint, not automatically synchronized. Reconcile discrepancies against confirmed events and current native values instead of treating an older resource table as live.
+The campaign's designated placed token controls own live resources; copies in another scene do not automatically share them. Session State is a manual checkpoint, not automatically synchronized. Reconcile discrepancies against confirmed events and current native values instead of treating an older resource table as live.
 
 Finish a play turn with the situation and the player's next choice. Keep technical evidence and deferred feature checks outside the narrative.

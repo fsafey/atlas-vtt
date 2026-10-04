@@ -21,6 +21,8 @@ More detailed maps are separately authored assets. Zooming a regional raster enl
 
 Regional token portraits are identifying markers. Several people can occupy one hex; token size, snapping and overlap do not set occupancy rules or establish room-scale separation. Retain linked individual hero cards and live resources even if one marker represents their group. When a party genuinely splits, record subgroup membership and real destinations before using separate markers. A regrouping or display adjustment does not spend time/resources by itself.
 
+Preserve the campaign's designated resource-owner scene/tokens when opening a child scene. Copied cards/defaults and new scene counters are not automatically synchronized. Apply costs once at the designated owner; keep presentation copies from implying a fresh resource pool. Any explicit ownership transfer needs confirmed values, a verified new owner and a recorded handoff that retires the old owner.
+
 ## Route a needed asset
 
 Reuse an appropriate existing asset first. When creating an asset is within the current request, load its owning skill from the active Atlas repository's `.agents/skills/<name>/SKILL.md`; these paths locate instructions, not newly granted tools or permissions.
