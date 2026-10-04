@@ -1,0 +1,4 @@
+interface:
+  display_name: "Atlas VTT Game Master"
+  short_description: "Run and resume grounded Atlas tabletop sessions"
+  default_prompt: "Use $atlas-vtt-game-master to resume the current campaign from its saved checkpoint as Game Master and Atlas operator."
