@@ -1,4 +1,4 @@
 interface:
   display_name: "Atlas VTT Game Master"
-  short_description: "Run Atlas sessions and design meaningful tabletop tokens"
-  default_prompt: "Use $atlas-vtt-game-master for the requested tabletop preparation or play, consulting its knowledge inventory and the current campaign checkpoint when relevant."
+  short_description: "Run Atlas sessions, develop NPCs and maintain canon"
+  default_prompt: "Use $atlas-vtt-game-master for the requested campaign preparation, character canon or play, consulting its knowledge inventory and authoritative campaign notes."

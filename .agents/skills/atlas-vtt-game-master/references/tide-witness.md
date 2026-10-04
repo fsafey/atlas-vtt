@@ -28,13 +28,25 @@ Paths below are relative to the active vault.
 | `Tide Witness/Player Brief.md`, `Tide Witness/Party.md` | Choose heroes/public context | Prepared options; no requirement to assign unselected heroes. |
 | `Tide Witness/GM Runbook.md` | Locate current beat | Preparation and reveal links; timings are guidance. |
 | `Tide Witness/GM/Scene Cards.md` | Frame current scene | Situation, stakes, prompts, possible consequences. Read only relevant scenes unless wider context is needed. |
-| `Tide Witness/GM/NPC Cards.md`, `Tide Witness/GM/Clue Ledger.md` | NPC/evidence question | GM knowledge and evidence consistency. |
+| `Tide Witness/GM/Codex.md` | Locate canon or organize entries | Private canon index linking characters, existing places and evidence. |
+| `Tide Witness/GM/Codex/Characters/Mara Venn.md`, `Tide Witness/GM/Codex/Characters/Ilyra Sen.md` | Develop or portray either NPC | Authoritative private histories, public accounts, behavior, capabilities, pressures and open arcs. |
+| `Tide Witness/GM/NPC Cards.md` | Quick NPC reference | Mara and Ilyra's summaries embed their canonical entries; the other witnesses retain existing cards. |
+| `Tide Witness/GM/Clue Ledger.md` | Evidence question | Sources, access and what the evidence establishes. |
+| `Tide Witness/GM/Private Preparation.md` | Apply canon to the pending exchange | Current-session opportunities; reread Session State for the actual checkpoint. |
 | `Tide Witness/GM/Story Arc.md` | Broader direction changes | Future possibilities, not completed events. |
 | `Tide Witness/Statblocks/<actor>.md` | Diagnose card discrepancy | Card prose/defaults, not placed actor live values. |
 | `Tide Witness/The Tide Witness.md` | Navigation | Campaign links and presentation assets. |
 | `Tide Witness/Atlas Feature Tracker.md` | Relevant Atlas limitation | Observed capabilities, defects, deferred checks. |
 
 Operator integration details are at `<source pack>/statblock-integration.json`. Consult for recovery or a relevant tool issue; it does not override Session State as the story record.
+
+## Canon and character surfaces
+
+The active vault owns Mara and Ilyra's character canon. The source pack references those entries; it has no second character dossier. NPC Cards embeds their `At a glance` sections. Their shared `Mara and Ilyra` relationship section is owned by Ilyra's entry and embedded in Mara's. Update that one account when its established facts change.
+
+Read each entry for the relevant history, specific behavior and knowledge limits. Its established background is not prior hero knowledge, and its possible arcs do not predetermine play.
+
+The regional scene's saved GM note is `Tide Witness/GM Runbook.md`, which links the codex. Existing GM pins target Scene Cards headings, which also link the entries. This uses Obsidian notes within Atlas's GM surfaces. The codex properties are descriptive metadata: `atlas_card` does not create a token link, and `audience: gm` does not restrict access. Existing `Statblocks/<actor>.md` notes remain the linked actor-card sources. Keep private character bodies and links out of public location hubs, player handouts and card fields.
 
 Live Strain and Kit stay on the original hero tokens' DM cards in `The Wandering Sea - Regional Travel` scene; live party Delay stays on that same scene's counter labeled `Delay`. Child-scene markers/cards are presentation copies: their default or copied values are not live owners. Do not spend there or create another live Delay counter unless ownership is explicitly moved, verified and recorded. Update the owner counter when Delay is earned and copy the confirmed value into Session State at a checkpoint. If a counter change is unapplied or uncertain, record the earned Delay and mutation status separately; do not erase a confirmed fictional cost because the UI is stale or apply it twice.
 

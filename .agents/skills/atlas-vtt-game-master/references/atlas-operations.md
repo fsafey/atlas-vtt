@@ -14,6 +14,8 @@ Inspect Obsidian's current window titles and select the campaign vault. Obtain f
 | --- | --- | --- |
 | Reopen scene | Atlas dashboard > Continue your adventure, or Asset Manager identified scene | Preserve existing scene rather than recreating it. |
 | GM notes/cards | Tab with canvas focus opens DM Dashboard | Focus matters; Locate actor also closes dashboard. |
+| Campaign codex | Follow the codex link from the existing GM note/runbook; use the note picker to change the linked note only when requested | Dashboard selection is a whole Markdown file; heading links belong inside the note or in note pins. Verify embedded summaries in the current installation. |
+| Note section beside a map | Existing GM note pin or pinned note preview | Pins support `note.md#Heading`. Preserve exact headings used by saved pins when reorganizing notes. |
 | Actor context | DM Dashboard > Locate named actor, then right-click at that actor | AX canvas-container right-click worked at its center when XY failed. Confirm actor identity after layout changes or overlaps. |
 | Resources | Designated owner actor's DM card, per campaign profile | Scene copies/defaults are not synchronized live owners. |
 | Party Delay | Counter labeled Delay in the designated owner scene | Party-wide cost; verify the counter and checkpoint the confirmed value. |
