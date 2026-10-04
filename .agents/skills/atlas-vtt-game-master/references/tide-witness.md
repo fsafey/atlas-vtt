@@ -21,6 +21,8 @@ Paths below are relative to the active vault.
 | `Tide Witness/Play Agreement.md` | Enter/resume | Current authority, tone, dice method, learning style. |
 | `Tide Witness/Rules.md` | Enter/resume and adjudicate | Authoritative d6 procedure and reward terms. |
 | `Tide Witness/Session State.md` | Every resume/checkpoint | Active party, real events, resources, pending decision. |
+| `Tide Witness/World and Map Conventions.md` | Enter/resume or interpret positions | Campaign spatial meaning, map hierarchy and party representation. |
+| `Tide Witness/Locations/Alderhaven.md`, `Tide Witness/Locations/Alderhaven/Registrar's Office.md` | Current opening; develop a place | Maintained public location hubs and actual asset readiness. |
 | `Tide Witness/Heroes/<active hero>.md` | Resume or check gear | Established specialties, equipment, motives, connections. Select names from Session State. |
 | `Tide Witness/Player Brief.md`, `Tide Witness/Party.md` | Choose heroes/public context | Prepared options; no requirement to assign unselected heroes. |
 | `Tide Witness/GM Runbook.md` | Locate current beat | Preparation and reveal links; timings are guidance. |
@@ -33,7 +35,7 @@ Paths below are relative to the active vault.
 
 Operator integration details are at `<source pack>/statblock-integration.json`. Consult for recovery or a relevant tool issue; it does not override Session State as the story record.
 
-Live Strain and Kit are on the placed hero's DM card; live party Delay is the scene counter labeled `Delay`. Update that counter when Delay is earned and copy the confirmed value into Session State at a checkpoint. If a counter change is unapplied or uncertain, record the earned Delay and mutation status separately; do not erase a confirmed fictional cost because the UI is stale or apply it twice.
+Live Strain and Kit stay on the original hero tokens' DM cards in `The Wandering Sea - Regional Travel` scene; live party Delay stays on that same scene's counter labeled `Delay`. Child-scene markers/cards are presentation copies: their default or copied values are not live owners. Do not spend there or create another live Delay counter unless ownership is explicitly moved, verified and recorded. Update the owner counter when Delay is earned and copy the confirmed value into Session State at a checkpoint. If a counter change is unapplied or uncertain, record the earned Delay and mutation status separately; do not erase a confirmed fictional cost because the UI is stale or apply it twice.
 
 ## Assets and recovery
 
