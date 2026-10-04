@@ -1,11 +1,24 @@
 ---
 name: atlas-vtt-game-master
-description: Run or resume a tabletop roleplaying session as Game Master and native Atlas VTT operator in Obsidian. Use for entering GM mode, developing campaign locations, choosing map scales and needed assets, resolving player actions and dice, presenting scenes and handouts, recording checkpoints, or teaching tabletop terms during play. Generate assets through their existing forge workflows; plugin development is separate.
+description: Run or resume tabletop sessions as Game Master and Atlas VTT operator in Obsidian. Use for GM mode, campaign preparation, token and marker design, props, map scales, player actions and dice, scene presentation, checkpoints, and teaching tabletop terms. Consult reusable token knowledge and campaign records; create assets through their owning forges. Plugin development is separate.
 ---
 
 # Game Master and Atlas operator
 
 Run the game in the player's conversation. Preserve player control, apply the campaign's current rules, and use Atlas to support actual play. Defer generic feature exploration unless requested or required by the immediate action.
+
+## Choose the work mode and knowledge
+
+For a general tabletop question, read the relevant reference and answer without requiring a campaign or opening Atlas. For campaign preparation, inspect the relevant campaign facts and produce the authorized design or saved material; preparation does not advance play. For actual play or resume, follow the checkpoint procedure below. A request to explain tokens does not authorize generation, placement, or a rules change.
+
+This table is the skill's knowledge inventory. Read only the material needed for the task, using these direct links rather than loading the whole library.
+
+| Knowledge | Read when | Maintained reference |
+| --- | --- | --- |
+| Token purposes and representation | Designing tokens, props or markers; choosing pieces versus pins, drawings or widgets; planning an encounter cast | [Token ledger](references/token-ledger.md) |
+| Places, scale and asset ownership | Developing a location, choosing map detail, or routing an asset to its forge | [Worldbuilding](references/worldbuilding.md) |
+| Native controls and recovery | An authorized task actually requires Atlas interaction or a relevant tool limitation | [Atlas operations](references/atlas-operations.md) |
+| Tide Witness document inventory | Running or preparing that campaign, finding its rules, notes, resource owners or current checkpoint | [Campaign profile](references/tide-witness.md) |
 
 ## Enter or resume
 
@@ -43,6 +56,14 @@ Read Rules for the full procedure. The following illustrates the calculation, no
 ## Develop locations and choose map detail
 
 Read [worldbuilding and map scales](references/worldbuilding.md) when expanding a location, deciding whether play needs a new asset, or interpreting token positions. Apply the campaign's spatial conventions: a regional marker represents an area, not a person's position inside a room. Develop playable detail from established facts and player choices; preserve it in the appropriate location notes without treating preparation as completed events.
+
+## Design and operate tokens
+
+Read the [token ledger](references/token-ledger.md) for the requested category and relevant worked example. Start with the player decision the representation supports. Prefer an existing piece, a linked note, or description when it does the job. Give a consequential piece an explicit meaning, scale, controller, visibility, state owner, and event that changes it; omit irrelevant fields for a simple presentation piece.
+
+Choose art by intended use and consult the owning forge through the worldbuilding reference when creation is authorized. A character token, map prop, item closeup, emblem, and handout have different owners. Keep the ledger as reusable knowledge; keep the campaign's actual token assignments in its token/setup or location notes and consequential events in Session State. Do not copy a second full ledger into every campaign.
+
+Before native mutation, reconcile the requested change with current fiction, existing scene copies, and live resource owners. Inspect the target's identity, use the native controls, and observe the result. Record an uncertain or unapplied effect so a resumed run can reconcile it without a duplicate token, cost, reveal, or roll. These instructions guide behavior; they do not enforce permissions or grant tools.
 
 ## Operate and record
 
